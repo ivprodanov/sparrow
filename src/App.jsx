@@ -1,4 +1,5 @@
 import Button from "./components/Button";
+import Card from "./components/Card";
 
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
               Primary Button
             </Button>
           </div>
+        </div>
+        <div className="row">
+          <Card>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint minima facilis vitae, sunt ipsum, enim iure in accusantium aliquam molestiae odit, officiis blanditiis libero repellendus nisi accusamus illo! Cumque, ipsum!
+          </Card>
         </div>
       </div>
     </>
