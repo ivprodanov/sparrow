@@ -61,3 +61,7 @@ $text-light: #ffffff;
 $text-dark: #212121;
 $text-muted: #757575;
 
+@mixin set-bg($bg, $text){
+    background-color: $bg;
+    color: $text;
+}

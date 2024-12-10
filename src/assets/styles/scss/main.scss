@@ -12,3 +12,8 @@
 // Components
 @import 'components/buttons';
 @import 'components/card';
+
+
+body {
+    @include set-bg($neutral-100, $darkClr)
+}
