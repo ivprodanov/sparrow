@@ -1,0 +1,66 @@
+@use 'sass:math';
+
+// Grid Variables
+$grid-columns: 12;            // Number of columns
+$grid-gutter: 16px;           // Space between columns
+$container-max-width: 1200px; // Maximum container width
+$breakpoints: (
+  xs: 480px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1440px
+);                            // Breakpoints for responsive design
+
+// Container
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+}
+
+// Row
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -(math.div($grid-gutter, 2));
+  margin-right: -(math.div($grid-gutter, 2));
+}
+
+// Column Mixin
+@mixin col($span: 1, $breakpoint: null) {
+  $percentage: math.div($span, $grid-columns) * 100%;
+  flex: 0 0 #{$percentage};
+  max-width: #{$percentage};
+  
+  // Add breakpoint responsiveness
+  @if $breakpoint {
+    $bp-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: #{$bp-value}) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+// Column Class
+[class*="col-"] {
+  padding-left: math.div($grid-gutter, 2);
+  padding-right: math.div($grid-gutter, 2);
+}
+
+// Responsive Column Classes
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include col($i);
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    .col-#{$i}-#{$breakpoint} {
+      @include col($i, $breakpoint);
+    }
+  }
+}

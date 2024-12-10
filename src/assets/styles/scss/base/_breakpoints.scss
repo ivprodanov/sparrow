@@ -1,0 +1,60 @@
+// Breakpoint Variables
+$breakpoint-xs: 480px;   // Extra small screens (phones)
+$breakpoint-sm: 768px;   // Small screens (tablets)
+$breakpoint-md: 1024px;  // Medium screens (desktops)
+$breakpoint-lg: 1280px;  // Large screens (widescreen desktops)
+$breakpoint-xl: 1440px;  // Extra large screens (4K or larger desktops)
+
+// Mixin for Media Queries
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+      @media (max-width: #{$breakpoint-xs}) {
+        @content;
+      }
+    } @else if $breakpoint == sm {
+      @media (max-width: #{$breakpoint-sm}) {
+        @content;
+      }
+    } @else if $breakpoint == md {
+      @media (max-width: #{$breakpoint-md}) {
+        @content;
+      }
+    } @else if $breakpoint == lg {
+      @media (max-width: #{$breakpoint-lg}) {
+        @content;
+      }
+    } @else if $breakpoint == xl {
+      @media (max-width: #{$breakpoint-xl}) {
+        @content;
+      }
+    } @else {
+      @warn "Undefined breakpoint: #{$breakpoint}";
+    }
+  }
+
+
+  // Example Utility Classes for Responsive Layout
+    // .container {
+    //     max-width: 100%;
+    
+    //     @include respond-to(md) {
+    //       max-width: 90%;
+    //     }
+    
+    //     @include respond-to(sm) {
+    //       max-width: 80%;
+    //     }
+    //   }
+    
+    //   // Example Usage in a Component
+    //   .example {
+    //     font-size: 16px;
+    
+    //     @include respond-to(sm) {
+    //       font-size: 14px;
+    //     }
+    
+    //     @include respond-to(xs) {
+    //       font-size: 12px;
+    //     }
+    //   }

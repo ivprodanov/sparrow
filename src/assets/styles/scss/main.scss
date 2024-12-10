@@ -1,5 +1,12 @@
-@use './general/colors';
+@import 'base/reset';
+@import 'base/font';
+@import 'base/colors';
+@import 'base/grid';
+@import 'base/breakpoints';
 
-@import url('./general/reset.scss');
-@import url('./general/font.scss');
-@import url('./utility/spacings.scss');
+@import 'utility/spacings';
+@import 'utility/layout';
+@import 'utility/screen_reader';
+
+// Components
+@import 'components/buttons'

@@ -1,0 +1,69 @@
+@import '../base/font'; // Colors, spacing, typography, etc.
+@import '../base/colors';    // Reusable mixins like flexbox, responsive utilities
+@import '../base/breakpoints';    
+@import '../base/variables';    
+@import '../utility/spacings';    
+
+// Default Button Styles
+.button {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md; // Use spacing variables
+  font-family: $font-family-base;  // Use typography variables
+  font-size: $fs-300;
+  font-weight: $fw-700;
+  text-align: center;
+  text-decoration: none;
+  // border-radius: $border-radius-md; // Rounded corners
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+// Variants
+.button-primary {
+  background-color: $lightBlue;
+  color: $whiteClr;
+
+  &:hover {
+    background-color: darken($lightBlue, 10%);
+  }
+}
+
+.button-secondary {
+  background-color: $roseClr;
+  color: $whiteClr;
+
+  &:hover {
+    background-color: lighten($roseClr, 10%);
+  }
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 2px solid $darkClr;
+  color: $darkClr;
+
+  &:hover {
+    background-color: $roseClr;
+    color: $whiteClr;
+  }
+}
+
+// Sizes
+.button-sm {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $fs-200;
+}
+
+.button-lg {
+  padding: $spacing-md $spacing-lg;
+  font-size: $fs-500;
+}
+
+// Disabled State
+.button:disabled {
+  background-color: $extraLightBlue;
+  color: $darkClr;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

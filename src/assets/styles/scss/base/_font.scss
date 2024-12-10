@@ -1,0 +1,152 @@
+@use "sass:map";
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+// Font variables
+$font-family-base: 'Ubuntu', serif;
+
+// Font Sizes
+$fs-100: 0.75rem; // Smallest font size
+$fs-200: 0.875rem;
+$fs-300: 1rem;    // Base font size
+$fs-400: 1.125rem;
+$fs-500: 1.25rem;
+$fs-600: 1.5rem;
+$fs-700: 1.75rem;
+$fs-800: 2rem;
+$fs-900: 2.25rem; // Largest font size
+
+// Font Weights
+$fw-100: 100; // Thin
+$fw-200: 200; // Extra Light
+$fw-300: 300; // Light
+$fw-400: 400; // Regular
+$fw-500: 500; // Medium
+$fw-600: 600; // Semi Bold
+$fw-700: 700; // Bold
+$fw-800: 800; // Extra Bold
+$fw-900: 900; // Black
+
+$lh-100: 1;     // Tight
+$lh-200: 1.125; // Slightly tight
+$lh-300: 1.25;  // Normal
+$lh-400: 1.375; // Relaxed
+$lh-500: 1.5;   // More relaxed
+$lh-600: 1.625; 
+$lh-700: 1.75; 
+$lh-800: 1.875;
+$lh-900: 2;     // Very relaxed
+
+// Maps ---------------------
+
+$font-sizes: (
+  'fs-100': 0.75rem, // Smallest font size
+  'fs-200': 0.875rem,
+  'fs-300': 1rem,    // Base font size
+  'fs-400': 1.125rem,
+  'fs-500': 1.25rem,
+  'fs-600': 1.5rem,
+  'fs-700': 1.75rem,
+  'fs-800': 2rem,
+  'fs-900': 2.25rem,
+);
+
+$font-weights: (
+  "fw-100": 100, // Thin
+  "fw-200": 200, // Extra Light
+  "fw-300": 300, // Light
+  "fw-400": 400, // Regular
+  "fw-500": 500, // Medium
+  "fw-600": 600, // Semi Bold
+  "fw-700": 700, // Bold
+  "fw-800": 800, // Extra Bold
+  "fw-900": 900, // Black
+);
+
+$line-heights: (
+  'lh-100': 1,     // Tight
+  'lh-200': 1.125, // Slightly tight
+  'lh-300': 1.25,  // Normal
+  'lh-400': 1.375, // Relaxed
+  'lh-500': 1.5,   // More relaxed
+  'lh-600': 1.625, 
+  'lh-700': 1.75, 
+  'lh-800': 1.875,
+  'lh-900': 2,     // Very relaxed
+);
+
+// Font Sizes script
+@each $size, $value in $font-sizes {
+  .#{$size} {
+    font-size: #{$value};
+  }
+}
+
+@each $weight, $value in $font-weights {
+  .#{$weight} {
+    font-weight: #{$value};
+  }
+}
+
+@each $height, $value in $line-heights {
+  .#{$height} {
+    line-height: #{$value};
+  }
+}
+
+
+
+* {
+    font-family: "Ubuntu", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ubuntu-light {
+    font-family: "Ubuntu", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .ubuntu-regular {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .ubuntu-medium {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .ubuntu-light-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .ubuntu-regular-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .ubuntu-medium-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .ubuntu-bold-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+
