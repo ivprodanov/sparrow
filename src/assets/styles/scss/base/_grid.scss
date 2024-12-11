@@ -2,7 +2,7 @@
 
 // Grid Variables
 $grid-columns: 12;            // Number of columns
-$grid-gutter: 16px;           // Space between columns
+$grid-gutter: 16px;           // Default gap value in pixels
 $container-max-width: 1200px; // Maximum container width
 $breakpoints: (
   xs: 480px,
@@ -22,20 +22,28 @@ $breakpoints: (
   padding-right: $grid-gutter;
 }
 
-// Row
+// Row (Flex container)
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -(math.div($grid-gutter, 2));
-  margin-right: -(math.div($grid-gutter, 2));
+  gap: 0; // Initially no gap for columns
 }
 
 // Column Mixin
 @mixin col($span: 1, $breakpoint: null) {
-  $percentage: math.div($span, $grid-columns) * 100%;
-  flex: 0 0 #{$percentage};
-  max-width: #{$percentage};
-  
+  // Calculate width in percentage
+  $column-width: math.div($span, $grid-columns) * 100%;
+
+  // Adjust column width to account for gutter if gutter is defined
+  @if $grid-gutter != 0 {
+    flex: 0 0 #{$column-width};
+    max-width: #{$column-width};
+  }
+  @else {
+    flex: 0 0 #{$column-width};
+    max-width: #{$column-width};
+  }
+
   // Add breakpoint responsiveness
   @if $breakpoint {
     $bp-value: map-get($breakpoints, $breakpoint);
@@ -44,12 +52,21 @@ $breakpoints: (
       max-width: 100%;
     }
   }
+
+  // Padding for spacing inside the column (if gutter is defined)
+  @if $grid-gutter != 0 {
+    padding-left: math.div($grid-gutter, 2);
+    padding-right: math.div($grid-gutter, 2);
+  }
+  @else {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // Column Class
 [class*="col-"] {
-  padding-left: math.div($grid-gutter, 2);
-  padding-right: math.div($grid-gutter, 2);
+  @include col(1); // By default, use 1 column width
 }
 
 // Responsive Column Classes
@@ -61,6 +78,17 @@ $breakpoints: (
   @each $breakpoint, $value in $breakpoints {
     .col-#{$i}-#{$breakpoint} {
       @include col($i, $breakpoint);
+    }
+  }
+}
+
+// Apply horizontal gaps (gx-* classes) directly to the columns
+// This ensures the gap is between individual columns.
+@for $i from 1 through 5 { // gx-1 to gx-5
+  .gx-#{$i} {
+    .col-#{$i} {
+      margin-left: math.div($grid-gutter, 2);
+      margin-right: math.div($grid-gutter, 2);
     }
   }
 }

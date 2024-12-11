@@ -246,11 +246,12 @@ select {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -8px;
-  margin-right: -8px;
+  gap: 0;
 }
 
 [class*=col-] {
+  flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -258,11 +259,15 @@ select {
 .col-1 {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-1-xs {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-1-xs {
@@ -274,6 +279,8 @@ select {
 .col-1-sm {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-1-sm {
@@ -285,6 +292,8 @@ select {
 .col-1-md {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-1-md {
@@ -296,6 +305,8 @@ select {
 .col-1-lg {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-1-lg {
@@ -307,6 +318,8 @@ select {
 .col-1-xl {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-1-xl {
@@ -318,11 +331,15 @@ select {
 .col-2 {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-2-xs {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-2-xs {
@@ -334,6 +351,8 @@ select {
 .col-2-sm {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-2-sm {
@@ -345,6 +364,8 @@ select {
 .col-2-md {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-2-md {
@@ -356,6 +377,8 @@ select {
 .col-2-lg {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-2-lg {
@@ -367,6 +390,8 @@ select {
 .col-2-xl {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-2-xl {
@@ -378,11 +403,15 @@ select {
 .col-3 {
   flex: 0 0 25%;
   max-width: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-3-xs {
   flex: 0 0 25%;
   max-width: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-3-xs {
@@ -394,6 +423,8 @@ select {
 .col-3-sm {
   flex: 0 0 25%;
   max-width: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-3-sm {
@@ -405,6 +436,8 @@ select {
 .col-3-md {
   flex: 0 0 25%;
   max-width: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-3-md {
@@ -416,6 +449,8 @@ select {
 .col-3-lg {
   flex: 0 0 25%;
   max-width: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-3-lg {
@@ -427,6 +462,8 @@ select {
 .col-3-xl {
   flex: 0 0 25%;
   max-width: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-3-xl {
@@ -438,11 +475,15 @@ select {
 .col-4 {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-4-xs {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-4-xs {
@@ -454,6 +495,8 @@ select {
 .col-4-sm {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-4-sm {
@@ -465,6 +508,8 @@ select {
 .col-4-md {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-4-md {
@@ -476,6 +521,8 @@ select {
 .col-4-lg {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-4-lg {
@@ -487,6 +534,8 @@ select {
 .col-4-xl {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-4-xl {
@@ -498,11 +547,15 @@ select {
 .col-5 {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-5-xs {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-5-xs {
@@ -514,6 +567,8 @@ select {
 .col-5-sm {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-5-sm {
@@ -525,6 +580,8 @@ select {
 .col-5-md {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-5-md {
@@ -536,6 +593,8 @@ select {
 .col-5-lg {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-5-lg {
@@ -547,6 +606,8 @@ select {
 .col-5-xl {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-5-xl {
@@ -558,11 +619,15 @@ select {
 .col-6 {
   flex: 0 0 50%;
   max-width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-6-xs {
   flex: 0 0 50%;
   max-width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-6-xs {
@@ -574,6 +639,8 @@ select {
 .col-6-sm {
   flex: 0 0 50%;
   max-width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-6-sm {
@@ -585,6 +652,8 @@ select {
 .col-6-md {
   flex: 0 0 50%;
   max-width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-6-md {
@@ -596,6 +665,8 @@ select {
 .col-6-lg {
   flex: 0 0 50%;
   max-width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-6-lg {
@@ -607,6 +678,8 @@ select {
 .col-6-xl {
   flex: 0 0 50%;
   max-width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-6-xl {
@@ -618,11 +691,15 @@ select {
 .col-7 {
   flex: 0 0 58.3333333333%;
   max-width: 58.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-7-xs {
   flex: 0 0 58.3333333333%;
   max-width: 58.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-7-xs {
@@ -634,6 +711,8 @@ select {
 .col-7-sm {
   flex: 0 0 58.3333333333%;
   max-width: 58.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-7-sm {
@@ -645,6 +724,8 @@ select {
 .col-7-md {
   flex: 0 0 58.3333333333%;
   max-width: 58.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-7-md {
@@ -656,6 +737,8 @@ select {
 .col-7-lg {
   flex: 0 0 58.3333333333%;
   max-width: 58.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-7-lg {
@@ -667,6 +750,8 @@ select {
 .col-7-xl {
   flex: 0 0 58.3333333333%;
   max-width: 58.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-7-xl {
@@ -678,11 +763,15 @@ select {
 .col-8 {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-8-xs {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-8-xs {
@@ -694,6 +783,8 @@ select {
 .col-8-sm {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-8-sm {
@@ -705,6 +796,8 @@ select {
 .col-8-md {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-8-md {
@@ -716,6 +809,8 @@ select {
 .col-8-lg {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-8-lg {
@@ -727,6 +822,8 @@ select {
 .col-8-xl {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-8-xl {
@@ -738,11 +835,15 @@ select {
 .col-9 {
   flex: 0 0 75%;
   max-width: 75%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-9-xs {
   flex: 0 0 75%;
   max-width: 75%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-9-xs {
@@ -754,6 +855,8 @@ select {
 .col-9-sm {
   flex: 0 0 75%;
   max-width: 75%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-9-sm {
@@ -765,6 +868,8 @@ select {
 .col-9-md {
   flex: 0 0 75%;
   max-width: 75%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-9-md {
@@ -776,6 +881,8 @@ select {
 .col-9-lg {
   flex: 0 0 75%;
   max-width: 75%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-9-lg {
@@ -787,6 +894,8 @@ select {
 .col-9-xl {
   flex: 0 0 75%;
   max-width: 75%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-9-xl {
@@ -798,11 +907,15 @@ select {
 .col-10 {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-10-xs {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-10-xs {
@@ -814,6 +927,8 @@ select {
 .col-10-sm {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-10-sm {
@@ -825,6 +940,8 @@ select {
 .col-10-md {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-10-md {
@@ -836,6 +953,8 @@ select {
 .col-10-lg {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-10-lg {
@@ -847,6 +966,8 @@ select {
 .col-10-xl {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-10-xl {
@@ -858,11 +979,15 @@ select {
 .col-11 {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-11-xs {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-11-xs {
@@ -874,6 +999,8 @@ select {
 .col-11-sm {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-11-sm {
@@ -885,6 +1012,8 @@ select {
 .col-11-md {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-11-md {
@@ -896,6 +1025,8 @@ select {
 .col-11-lg {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-11-lg {
@@ -907,6 +1038,8 @@ select {
 .col-11-xl {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-11-xl {
@@ -918,11 +1051,15 @@ select {
 .col-12 {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .col-12-xs {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 480px) {
   .col-12-xs {
@@ -934,6 +1071,8 @@ select {
 .col-12-sm {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 768px) {
   .col-12-sm {
@@ -945,6 +1084,8 @@ select {
 .col-12-md {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1024px) {
   .col-12-md {
@@ -956,6 +1097,8 @@ select {
 .col-12-lg {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1280px) {
   .col-12-lg {
@@ -967,12 +1110,39 @@ select {
 .col-12-xl {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 @media (max-width: 1440px) {
   .col-12-xl {
     flex: 0 0 100%;
     max-width: 100%;
   }
+}
+
+.gx-1 .col-1 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.gx-2 .col-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.gx-3 .col-3 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.gx-4 .col-4 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.gx-5 .col-5 {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .radius-none {
