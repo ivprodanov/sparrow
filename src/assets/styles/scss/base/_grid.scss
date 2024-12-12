@@ -1,3 +1,7 @@
+/* TODOs:
+    - [ ] Allow also only 'col' classes
+    - [ ] Breakpoints for 'col' classes
+*/
 @use 'sass:math';
 @use 'sass:list';
 
@@ -112,6 +116,7 @@ $breakpoints: (
 
 // Column Class
 @for $i from 1 through $grid-columns {
+
   .col-#{$i} {
     @include col($i, 0); // Default column width with no gutter
   }

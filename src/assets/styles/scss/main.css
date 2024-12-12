@@ -234,6 +234,190 @@ select {
   text-align: center;
 }
 
+.primary-100 {
+  background-color: #e4f5f3;
+  color: #212121;
+}
+
+.secondary-100 {
+  background-color: #f7fbf1;
+  color: #212121;
+}
+
+.accent-100 {
+  background-color: #fde7eb;
+  color: #212121;
+}
+
+.neutral-100 {
+  background-color: #e6dbde;
+  color: #212121;
+}
+
+.primary-200 {
+  background-color: #c4e7e3;
+  color: #212121;
+}
+
+.secondary-200 {
+  background-color: #ecf6d9;
+  color: #212121;
+}
+
+.accent-200 {
+  background-color: #fbbdc9;
+  color: #212121;
+}
+
+.neutral-200 {
+  background-color: #cdb8be;
+  color: #212121;
+}
+
+.primary-300 {
+  background-color: #a3d8d3;
+  color: #212121;
+}
+
+.secondary-300 {
+  background-color: #e1f1c1;
+  color: #212121;
+}
+
+.accent-300 {
+  background-color: #f993a7;
+  color: #212121;
+}
+
+.neutral-300 {
+  background-color: #b3969f;
+  color: #212121;
+}
+
+.primary-400 {
+  background-color: #83cac3;
+  color: #212121;
+}
+
+.secondary-400 {
+  background-color: #d6ecaa;
+  color: #212121;
+}
+
+.accent-400 {
+  background-color: #f76885;
+  color: #212121;
+}
+
+.neutral-400 {
+  background-color: #9a737f;
+  color: #ffffff;
+}
+
+.primary-500 {
+  background-color: #9AD2CB;
+  color: #212121;
+}
+
+.secondary-500 {
+  background-color: #D7EBBA;
+  color: #212121;
+}
+
+.accent-500 {
+  background-color: #EA526F;
+  color: #ffffff;
+}
+
+.neutral-500 {
+  background-color: #472836;
+  color: #ffffff;
+}
+
+.primary-600 {
+  background-color: #68a7a1;
+  color: #212121;
+}
+
+.secondary-600 {
+  background-color: #aec490;
+  color: #212121;
+}
+
+.accent-600 {
+  background-color: #b84257;
+  color: #ffffff;
+}
+
+.neutral-600 {
+  background-color: #391f2b;
+  color: #ffffff;
+}
+
+.primary-700 {
+  background-color: #4f7f7a;
+  color: #ffffff;
+}
+
+.secondary-700 {
+  background-color: #879c6f;
+  color: #212121;
+}
+
+.accent-700 {
+  background-color: #892f41;
+  color: #ffffff;
+}
+
+.neutral-700 {
+  background-color: #2b1721;
+  color: #ffffff;
+}
+
+.primary-800 {
+  background-color: #355653;
+  color: #ffffff;
+}
+
+.secondary-800 {
+  background-color: #5f7450;
+  color: #ffffff;
+}
+
+.accent-800 {
+  background-color: #5b1f2b;
+  color: #ffffff;
+}
+
+.neutral-800 {
+  background-color: #1d0f16;
+  color: #ffffff;
+}
+
+.primary-900 {
+  background-color: #1a2c2b;
+  color: #ffffff;
+}
+
+.secondary-900 {
+  background-color: #384b30;
+  color: #ffffff;
+}
+
+.accent-900 {
+  background-color: #2d0f16;
+  color: #ffffff;
+}
+
+.neutral-900 {
+  background-color: #0e080b;
+  color: #ffffff;
+}
+
+/* TODOs:
+    - [ ] Allow also only 'col' classes
+    - [ ] Breakpoints for 'col' classes
+*/
 .container {
   width: 100%;
   max-width: 1200px;
@@ -3692,9 +3876,4 @@ select {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-body {
-  background-color: #f5f5f5;
-  color: #454545;
 }/*# sourceMappingURL=main.css.map */

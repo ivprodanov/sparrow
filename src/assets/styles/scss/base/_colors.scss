@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $whiteClr: #F1FFFA;
 $darkClr: #454545;
 $lightBlue: #93B7BE;
@@ -7,48 +9,51 @@ $extraLightBlue: #bbcccf;
 // TODO - change later ------------------------------------- example colors for now.
 
 // Primary Color (Blue)
-$primary-100: #e3f2fd;
-$primary-200: #bbdefb;
-$primary-300: #90caf9;
-$primary-400: #64b5f6;
-$primary-500: #2196f3; // Default primary color
-$primary-600: #1e88e5;
-$primary-700: #1976d2;
-$primary-800: #1565c0;
-$primary-900: #0d47a1;
+$colorsMap: (
+    // Primary Color (#9AD2CB)
+    primary-100: #e4f5f3,
+    primary-200: #c4e7e3,
+    primary-300: #a3d8d3,
+    primary-400: #83cac3,
+    primary-500: #9AD2CB, // Base primary color
+    primary-600: #68a7a1,
+    primary-700: #4f7f7a,
+    primary-800: #355653,
+    primary-900: #1a2c2b,
 
-// Secondary Color (Green)
-$secondary-100: #c8e6c9;
-$secondary-200: #a5d6a7;
-$secondary-300: #81c784;
-$secondary-400: #66bb6a;
-$secondary-500: #4caf50; // Default secondary color
-$secondary-600: #43a047;
-$secondary-700: #388e3c;
-$secondary-800: #2c6e2f;
-$secondary-900: #1b5e20;
+    // Secondary Color (#D7EBBA)
+    secondary-100: #f7fbf1,
+    secondary-200: #ecf6d9,
+    secondary-300: #e1f1c1,
+    secondary-400: #d6ecaa,
+    secondary-500: #D7EBBA, // Base secondary color
+    secondary-600: #aec490,
+    secondary-700: #879c6f,
+    secondary-800: #5f7450,
+    secondary-900: #384b30,
 
-// Accent Color (Orange)
-$accent-100: #ffccbc;
-$accent-200: #ffab91;
-$accent-300: #ff8a65;
-$accent-400: #ff7043;
-$accent-500: #ff5722; // Default accent color
-$accent-600: #f4511e;
-$accent-700: #e64a19;
-$accent-800: #d84315;
-$accent-900: #bf360c;
+    // Accent Color (#EA526F)
+    accent-100: #fde7eb,
+    accent-200: #fbbdc9,
+    accent-300: #f993a7,
+    accent-400: #f76885,
+    accent-500: #EA526F, // Base accent color
+    accent-600: #b84257,
+    accent-700: #892f41,
+    accent-800: #5b1f2b,
+    accent-900: #2d0f16,
 
-// Neutral Color (Gray)
-$neutral-100: #f5f5f5;
-$neutral-200: #eeeeee;
-$neutral-300: #e0e0e0;
-$neutral-400: #bdbdbd;
-$neutral-500: #9e9e9e; // Default neutral color
-$neutral-600: #757575;
-$neutral-700: #616161;
-$neutral-800: #424242;
-$neutral-900: #212121;
+    // Neutral Color (#472836)
+    neutral-100: #e6dbde,
+    neutral-200: #cdb8be,
+    neutral-300: #b3969f,
+    neutral-400: #9a737f,
+    neutral-500: #472836, // Base neutral color
+    neutral-600: #391f2b,
+    neutral-700: #2b1721,
+    neutral-800: #1d0f16,
+    neutral-900: #0e080b
+);
 
 // Background Colors
 $background-light: #fafafa;
@@ -61,7 +66,41 @@ $text-light: #ffffff;
 $text-dark: #212121;
 $text-muted: #757575;
 
-@mixin set-bg($bg, $text){
-    background-color: $bg;
-    color: $text;
+$colorNameMap: ('primary', 'secondary', 'accent', 'neutral');
+// $colorValuesMap: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+// Function to determine inverted text color
+@function inverted-text-color($bg-color) {
+    // Calculate the luminance of the background color
+    $red: math.div(red($bg-color), 255);
+    $green: math.div(green($bg-color), 255);
+    $blue: math.div(blue($bg-color), 255);
+  
+    $luminance: 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
+  
+    @if $luminance > 0.5 {
+      @return $text-dark; // Light background -> Dark text
+    } @else {
+      @return $text-light; // Dark background -> Light text
+    }
+  }
+
+
+@for $i from 1 through 9 {
+    $value: $i * 100;
+
+    @each $color in $colorNameMap {
+        $key: #{$color}-#{$value}; // Dynamically build the key
+        @if map-has-key($colorsMap, $key) {
+            $bg-color: map-get($colorsMap, $key);
+            $text-color: inverted-text-color($bg-color);
+
+            .#{$color}-#{$value} {
+                background-color: $bg-color; // Access the map value
+                color: $text-color;
+            }
+        } @else {
+            @warn "Key `#{$key}` does not exist in $colorsMap.";
+        }
+    }
 }
