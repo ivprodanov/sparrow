@@ -100,14 +100,14 @@ $breakpoints: (
   @if $breakpoint {
     $bp-value: map-get($breakpoints, $breakpoint);
     @media (max-width: #{$bp-value}) {
-      flex: 0 0 100%;
-      max-width: 100%;
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
     }
   }
 
   // Add padding for column gaps
-  padding-left: math.div($gutter, 2);
-  padding-right: math.div($gutter, 2);
+  // padding-left: math.div($gutter, 2);
+  // padding-right: math.div($gutter, 2);
 }
 
 // Column Class
@@ -122,6 +122,15 @@ $breakpoints: (
       @include col($i, 0, $breakpoint);
     }
   }
+
+  @each $breakpoint, $value in $breakpoints {
+      @if($value <= 768px) {
+      .col-#{$i} {
+        @include col($i, 0, $breakpoint);
+      }
+    }
+  }
+
 
   // Generate gx-* specific column widths
   @each $key, $value in $gutters {

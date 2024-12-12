@@ -34,7 +34,7 @@ function App() {
           <div className="col-10 shadow-sm p-a-400 ">10.</div>
           <div className="col-2 shadow-sm p-a-400 ">2.</div>
         </div>
-        <div className="row m-t-600 gx-2">
+        <div className="row m-t-600 gx-5">
           <div className="col-2 shadow-sm p-a-400 ">2.</div>
           <div className="col-2 shadow-sm p-a-400 ">2.</div>
           <div className="col-4 shadow-sm p-a-400 ">4.</div>
