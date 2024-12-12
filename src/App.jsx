@@ -18,6 +18,10 @@ function App() {
             <h2>test column - 12</h2>
           </div>
         </div>
+        <div className="row m-t-600 gx-4">
+          <div className="col-6 shadow-sm p-a-400 ">6</div>
+          <div className="col-6 shadow-sm p-a-400 ">6</div>
+        </div>
         <div className="row m-t-600">
           <div className="col-8 shadow-sm p-a-400 ">8.</div>
           <div className="col-4 shadow-sm p-a-400 ">4</div>
@@ -26,11 +30,11 @@ function App() {
           <div className="col-3 shadow-sm p-a-400 ">3.</div>
           <div className="col-9 shadow-sm p-a-400 ">9.</div>
         </div>
-        <div className="row m-t-600 gx-5">
+        <div className="row m-t-600 gx-9">
           <div className="col-10 shadow-sm p-a-400 ">10.</div>
           <div className="col-2 shadow-sm p-a-400 ">2.</div>
         </div>
-        <div className="row m-t-600">
+        <div className="row m-t-600 gx-2">
           <div className="col-2 shadow-sm p-a-400 ">2.</div>
           <div className="col-2 shadow-sm p-a-400 ">2.</div>
           <div className="col-4 shadow-sm p-a-400 ">4.</div>

@@ -1,16 +1,60 @@
 @use 'sass:math';
+@use 'sass:list';
+
+@function calculateRem($size) {
+  $remSize: math.div($size, 16px);
+  @return $remSize;
+}
+
+@function extract-value-from-rem($value) {
+  @if unit($value) == rem {
+    @return math.div($value, 1rem); // Remove the rem unit by dividing by 1rem
+  }
+  @error "The value must be in rem.";
+}
+
+@function divide-gutters($gutter, $container-max-width) {
+  // Convert the gutter to rem if it's not already
+  $gutter-in-rem: extract-value-from-rem($gutter);
+
+  // Calculate the gutter percentage (relative to container width)
+  $gutter-percentage: math.div($gutter-in-rem, calculateRem($container-max-width)) * 100;
+
+  @return $gutter-percentage;
+}
+
+@function extract-value($value) {
+  // Check if the value has a unit
+  @if unit($value) != "" {
+    @return math.div($value, 1#{unit($value)});
+  }
+  @error "The value must have a unit." + $value;
+}
 
 // Grid Variables
 $grid-columns: 12;            // Number of columns
-$grid-gutter: 16px;           // Default gap value in pixels
 $container-max-width: 1200px; // Maximum container width
+$gutters: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 1.75rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem
+); // Gutter sizes for gx-* classes
+
 $breakpoints: (
   xs: 480px,
   sm: 768px,
   md: 1024px,
   lg: 1280px,
   xl: 1440px
-);                            // Breakpoints for responsive design
+);
 
 // Container
 .container {
@@ -18,31 +62,39 @@ $breakpoints: (
   max-width: $container-max-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
 }
 
 // Row (Flex container)
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0; // Initially no gap for columns
+
+  // Generate gutter classes dynamically
+  @each $key, $value in $gutters {
+    &.gx-#{$key} {
+      gap: #{$value}; // Assign the gutter value directly to the gap property
+    }
+  }
 }
 
 // Column Mixin
-@mixin col($span: 1, $breakpoint: null) {
-  // Calculate width in percentage
-  $column-width: math.div($span, $grid-columns) * 100%;
+@mixin col($span: 1, $gutter: 0, $breakpoint: null) {
+  // Convert gutter to percentage of container width
+  $gutter-percentage: 0;
+  @if($gutter != 0) {
+    $gutter-percentage: divide-gutters($gutter, $container-max-width);
+  }
 
-  // Adjust column width to account for gutter if gutter is defined
-  @if $grid-gutter != 0 {
-    flex: 0 0 #{$column-width};
-    max-width: #{$column-width};
-  }
-  @else {
-    flex: 0 0 #{$column-width};
-    max-width: #{$column-width};
-  }
+  // Calculate the column width as a percentage, accounting for gutter space
+  $column-width: math.div($span, $grid-columns) * 100 ;
+  // Ensure we subtract the gutter percentage from the column width
+  // $column-width: $column-width - $gutter-percentage;
+
+  $column-width: ($column-width) - ($gutter-percentage);
+
+  // Apply the calculated column width as a percentage
+  flex: 0 0 #{($column-width) } + '%';
+  max-width: #{$column-width} + '%';
 
   // Add breakpoint responsiveness
   @if $breakpoint {
@@ -53,42 +105,36 @@ $breakpoints: (
     }
   }
 
-  // Padding for spacing inside the column (if gutter is defined)
-  @if $grid-gutter != 0 {
-    padding-left: math.div($grid-gutter, 2);
-    padding-right: math.div($grid-gutter, 2);
-  }
-  @else {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  // Add padding for column gaps
+  padding-left: math.div($gutter, 2);
+  padding-right: math.div($gutter, 2);
 }
 
 // Column Class
-[class*="col-"] {
-  @include col(1); // By default, use 1 column width
-}
-
-// Responsive Column Classes
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    @include col($i);
+    @include col($i, 0); // Default column width with no gutter
   }
 
+  // Responsive Column Classes
   @each $breakpoint, $value in $breakpoints {
     .col-#{$i}-#{$breakpoint} {
-      @include col($i, $breakpoint);
+      @include col($i, 0, $breakpoint);
+    }
+  }
+
+  // Generate gx-* specific column widths
+  @each $key, $value in $gutters {
+    .gx-#{$key} {
+      justify-content: space-between;
+      .col-#{$i} {
+        @include col($i, $value); // Pass gutter dynamically to the column
+      }
     }
   }
 }
 
-// Apply horizontal gaps (gx-* classes) directly to the columns
-// This ensures the gap is between individual columns.
-@for $i from 1 through 5 { // gx-1 to gx-5
-  .gx-#{$i} {
-    .col-#{$i} {
-      margin-left: math.div($grid-gutter, 2);
-      margin-right: math.div($grid-gutter, 2);
-    }
-  }
+@mixin fontSize($size) {
+  font-size: $size; // Fallback in px
+  font-size: calculateRem($size);
 }
