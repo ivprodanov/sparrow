@@ -140,6 +140,12 @@ $breakpoints: (
       }
     }
   }
+
+  @each $key, $value in $gutters {
+    .gy-#{$key} {
+      margin: $value 0;
+    }
+  }
 }
 
 @mixin fontSize($size) {

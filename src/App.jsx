@@ -4,13 +4,13 @@ import Card from "./components/Card";
 function App() {
   return (
     <div className="container">
-      <div className="row gx-2">
+      <div className="row gx-2 gy-4">
         <div className="col p-a-500 shadow-lg primary-300">1</div>
         <div className="col p-a-500 shadow-lg primary-500">1</div>
         <div className="col p-a-500 shadow-lg primary-700">1</div>
       </div>
 
-      <div className="row">
+      <div className="row gy-2">
         <div className="col p-a-500 shadow-lg primary-900">2</div>
       </div>
 
