@@ -1,6 +1,5 @@
 /* TODOs:
-    - [ ] Allow also only 'col' classes
-    - [ ] Breakpoints for 'col' classes
+    - [x] Allow also only 'col' classes
 */
 @use 'sass:math';
 @use 'sass:list';
@@ -81,56 +80,51 @@ $breakpoints: (
   }
 }
 
-// Column Mixin
+@mixin mediaQuery($bp) {
+    @media (max-width: #{$bp}) {
+      @content;
+    }
+}
+
 @mixin col($span: 1, $gutter: 0, $breakpoint: null) {
+  $column-width: 100;
   // Convert gutter to percentage of container width
   $gutter-percentage: 0;
   @if($gutter != 0) {
     $gutter-percentage: divide-gutters($gutter, $container-max-width);
   }
-
   // Calculate the column width as a percentage, accounting for gutter space
-  $column-width: math.div($span, $grid-columns) * 100 ;
-  // Ensure we subtract the gutter percentage from the column width
-  // $column-width: $column-width - $gutter-percentage;
+  @if ($span != 'default') {
+    $column-width: math.div($span, $grid-columns) * 100;
 
   $column-width: ($column-width) - ($gutter-percentage);
+      flex: 0 0 #{($column-width) } + '%' !important;
+      max-width: #{($column-width) } + '%' !important;
+} 
 
-  // Apply the calculated column width as a percentage
-  flex: 0 0 #{($column-width) } + '%';
-  max-width: #{$column-width} + '%';
-
-  // Add breakpoint responsiveness
-  @if $breakpoint {
-    $bp-value: map-get($breakpoints, $breakpoint);
-    @media (max-width: #{$bp-value}) {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-    }
+  @if $span == 'default' {
+    flex: 1;
+    max-width: 100%;
   }
-
-  // Add padding for column gaps
-  // padding-left: math.div($gutter, 2);
-  // padding-right: math.div($gutter, 2);
 }
 
 // Column Class
 @for $i from 1 through $grid-columns {
 
-  .col-#{$i} {
-    @include col($i, 0); // Default column width with no gutter
+  .col {
+    @include col('default', 0); // Default column
   }
 
   // Responsive Column Classes
   @each $breakpoint, $value in $breakpoints {
-    .col-#{$i}-#{$breakpoint} {
-      @include col($i, 0, $breakpoint);
+    .col-#{$i} {
+        @include col($i, 0, $breakpoint);
     }
   }
 
   @each $breakpoint, $value in $breakpoints {
-      @if($value <= 768px) {
-      .col-#{$i} {
+    @include mediaQuery($value) {
+      .col-#{$i}-#{$breakpoint} {
         @include col($i, 0, $breakpoint);
       }
     }
