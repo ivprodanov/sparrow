@@ -1,5 +1,6 @@
 import Button from "./components/Button";
 import Card from "./components/Card";
+import { Thing } from "./components/Thing";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className="row">
         <div className="col-4 col-12-sm col-6-md p-a-500 shadow-lg primary-100">3</div>
       </div>
+      <Thing description={'a big primary button'}>button</Thing>
     </div>
   );
 }

@@ -6,10 +6,11 @@ const Button = ({
   size = 'md',         // default size
   disabled = false,
   onClick,
+  stylings
 }) => {
   const classNames = `button button-${variant} button-${size}`;
   return (
-    <button className={classNames} onClick={onClick} disabled={disabled}>
+    <button className={stylings ? stylings : classNames} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

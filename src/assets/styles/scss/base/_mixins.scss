@@ -1,3 +1,5 @@
+@use 'colors';
+
 // Border radius mixins
 $border-radius-none: 0;
 $border-radius-sm: 4px;
@@ -21,10 +23,21 @@ $border-radius-map: (
     border-radius: $radius;
 }
 
+@mixin border($radius) {
+  border: $radius solid $text-dark;
+}
+
+
 @each $size, $value in $border-radius-map {
     .radius-#{$size} {
         @include border-radius($value);
     }
+}
+
+@each $size, $value in $border-radius-map {
+  .border-#{$size} {
+      @include border($value);
+  }
 }
 
 // Box-shadow mixins
