@@ -10,6 +10,7 @@ $space-600: 3rem;     // 48px
 $space-700: 4rem;     // 64px
 $space-800: 6rem;     // 96px
 $space-900: 8rem;     // 128px
+$autoSpacing: auto;
 
 $direction-map: (
     "t": "-top",
@@ -52,6 +53,9 @@ $direction-map: (
     .#{$property}-#{$direction}-900 { 
         margin#{map.get($direction-map, $direction)}: $space-900; 
     }
+    .#{$property}-#{$direction}-auto { 
+        margin#{map.get($direction-map, $direction)}: $autoSpacing; 
+    }
 }
   
 // Padding utilities
@@ -82,6 +86,9 @@ $direction-map: (
     }
     .#{$property}-#{$direction}-900 { 
         padding#{map.get($direction-map, $direction)}: $space-900; 
+    }
+    .#{$property}-#{$direction}-auto { 
+        padding#{map.get($direction-map, $direction)}: $autoSpacing; 
     }
 }
   

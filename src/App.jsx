@@ -1,6 +1,7 @@
 import Button from "./components/Button";
 import Card from "./components/Card";
 import { Thing } from "./components/Thing";
+import { Things } from "./components/Things";
 
 function App() {
   return (
@@ -16,9 +17,23 @@ function App() {
       </div>
 
       <div className="row">
-        <div className="col-4 col-12-sm col-6-md p-a-500 shadow-lg primary-100">3</div>
+        <div className="col-4 col-12-sm col-6-md p-a-500 shadow-lg primary-100">
+          3
+        </div>
       </div>
-      <Thing description={'a big primary button'}>button</Thing>
+      <div className="row">
+        <div className="col">
+          <Thing description={"a big primary button"}>button</Thing>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col m-x-auto">
+          <Things
+            description="3 big rounded shadowed bordered secondary buttons"
+            texts={["button1", "button2", "button3"]}
+          />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Descriptions } from "../config/thingDescriptions";
+import { useEffect, useState } from "react";
 import { ComponentMappings, ThingMappings } from "./ThingMappings";
 
 export const Thing = ({ description, children }) => {
     const [component, setComponent] = useState();
-    const [styles, setStyles] = useState();
 
   useEffect(() => {
     let thing = determineThing();

@@ -42,3 +42,30 @@ export const ComponentMappings = (component, children) => {
         }
     }
 }
+
+export const ComponentsMappings = (component) => {
+    const filterMappings = (mappings, keys) => {
+      return keys.reduce((result, key) => {
+        if (key in mappings.button) {
+          result = result.concat(mappings.button[key]);
+        }
+        return result;
+      }, []);
+    };
+  
+    const filteredClasses = component && filterMappings(ThingMappings, component.descriptions);
+  
+    if (component) {
+      switch (component.type) {
+        case 'buttons':
+          const numberOfButtons = parseInt(component.numberOfThings, 10);
+          return Array.from({ length: numberOfButtons }, (_, idx) => (
+            <Button key={idx} stylings={filteredClasses.join(' ')}>
+              {component.textsObject[`text${idx + 1}`]}
+            </Button>
+          ));
+        default:
+          return null;
+      }
+    }
+  };
