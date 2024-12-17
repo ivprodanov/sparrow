@@ -2,6 +2,7 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import { Thing } from "./components/Thing";
 import { Things } from "./components/Things";
+import GlassImage from '../src/assets/images/glass.jpg'
 
 function App() {
   return (
@@ -32,6 +33,37 @@ function App() {
             description="3 big rounded shadowed bordered secondary buttons"
             texts={["button1", "button2", "button3"]}
           />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-6">
+          <Card title='Image Card' variant="image-card" cardImage={GlassImage}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+          </Card>
+          
+        </div>
+        <div className="col-6">
+        <Card title='Simple Card' variant="simple-card" cardImage={GlassImage}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus minima itaque, a molestiae voluptate
+          </Card>
         </div>
       </div>
     </div>
