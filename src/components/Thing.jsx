@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ComponentMappings, ThingMappings } from "./ThingMappings";
 
-export const Thing = ({ description, children }) => {
+export const Thing = ({ description, children, event }) => {
     const [component, setComponent] = useState();
 
   useEffect(() => {
@@ -25,5 +25,5 @@ export const Thing = ({ description, children }) => {
     return describedThing;
   };
 
-  return ComponentMappings(component, children);
+  return ComponentMappings(component, children, event);
 };

@@ -22,15 +22,17 @@
 .button-primary {
   background-color: $lightBlue;
   color: $whiteClr;
+  border: 0;
 
   &:hover {
-    background-color: darken($lightBlue, 10%);
+    background-color: lighten($lightBlue, 10%);
   }
 }
 
 .button-secondary {
   background-color: $roseClr;
   color: $whiteClr;
+  border: 0;
 
   &:hover {
     background-color: lighten($roseClr, 10%);

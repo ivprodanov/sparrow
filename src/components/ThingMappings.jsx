@@ -7,8 +7,8 @@ export const ThingMappings = {
         'medium-sized': ['p-x-500', 'p-y-200', 'fs-500'],
         'small': ['p-x-500', 'p-y-200', 'fs-200'],
         //color
-        'primary': ['primary-500'],
-        'secondary': ['secondary-500'],
+        'primary': ['button-primary'],
+        'secondary': ['button-secondary'],
         'accent': ['accent-500'],
         'neutral': ['neutral-500'],
         //borders
@@ -18,7 +18,7 @@ export const ThingMappings = {
     }
 }
 
-export const ComponentMappings = (component, children) => {
+export const ComponentMappings = (component, children, event) => {
     const filterMappings = (mappings, keys) => {
         // Flatten the values that match the input keys
         return keys.reduce((result, key) => {
@@ -35,7 +35,7 @@ export const ComponentMappings = (component, children) => {
     if(component) {
         switch (component.type) {
             case 'button':
-                return <Button stylings={filteredClasses.join(' ')}>{children}</Button>;
+                return <Button onClick={event} stylings={filteredClasses.join(' ')}>{children}</Button>;
                 break;
             default:
                 break;
@@ -60,7 +60,7 @@ export const ComponentsMappings = (component) => {
         case 'buttons':
           const numberOfButtons = parseInt(component.numberOfThings, 10);
           return Array.from({ length: numberOfButtons }, (_, idx) => (
-            <Button key={idx} stylings={filteredClasses.join(' ')}>
+            <Button onClick={component.eventsObject[`event${idx + 1}`]} key={idx} stylings={filteredClasses.join(' ')}>
               {component.textsObject[`text${idx + 1}`]}
             </Button>
           ));

@@ -4324,16 +4324,18 @@ select {
 }
 
 .button-primary {
-  background-color: #93B7BE;
+  background-color: #61949e;
   color: #F1FFFA;
+  border: 0;
 }
 .button-primary:hover {
-  background-color: #73a2ab;
+  background-color: #81a9b1;
 }
 
 .button-secondary {
   background-color: #785964;
   color: #F1FFFA;
+  border: 0;
 }
 .button-secondary:hover {
   background-color: #956f7d;

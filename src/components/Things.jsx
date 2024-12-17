@@ -26,7 +26,7 @@ export const Things = ({ description, events = [] , texts = [] }) => {
     }
 
     for(let i = 0; i < events.length; i++){
-        eventsObject[`text${i + 1}`] = events[i];
+        eventsObject[`event${i + 1}`] = events[i];
     }
 
     let describedThings = {

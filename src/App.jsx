@@ -5,6 +5,17 @@ import { Things } from "./components/Things";
 import GlassImage from '../src/assets/images/glass.jpg'
 
 function App() {
+  const functionOne = () => {
+    alert(1)
+  }
+
+  const functionTwo = () => {
+    alert(2)
+  }
+
+  const functionThree = () => {
+    alert(3)
+  }
   return (
     <div className="container">
       <div className="row gx-2 gy-4">
@@ -22,18 +33,15 @@ function App() {
           3
         </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <Thing description={"a big primary button"}>button</Thing>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col m-x-auto">
-          <Things
-            description="3 big rounded shadowed bordered secondary buttons"
-            texts={["button1", "button2", "button3"]}
-          />
-        </div>
+      <div className="row m-y-400 gx-4">
+          <Thing description={"a big primary button"} event={() => alert('test')}>button</Thing>
+          <div className="col">
+            <Things
+              description="3 small rounded shadowed secondary buttons"
+              texts={["button1", "button2", "button3"]}
+              events={[functionOne, functionTwo, functionThree]}
+            />
+          </div>
       </div>
       <div className="row">
         <div className="col-6">
