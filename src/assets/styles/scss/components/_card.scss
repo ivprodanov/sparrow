@@ -1,3 +1,5 @@
+@use '../base/colors' as clr;
+
 // SCSS Variables for Reusability (optional, but recommended)
 $card-border-radius: 16px;
 $card-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -19,10 +21,49 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
   backdrop-filter: blur($card-backdrop-blur);
   -webkit-backdrop-filter: blur($card-backdrop-blur);
   border: 1px solid rgba(255, 255, 255, 0.24);
-  height: 25rem;
-  width: 20rem;
   overflow: hidden;
   transition: all 0.5s ease;
+
+  &-primary {
+    background-color: map-get(clr.$colorsMap, 'primary-500');
+  }
+
+  &-secondary {
+    background-color: map-get(clr.$colorsMap, 'secondary-500');
+  }
+
+  &-accent {
+    background-color: map-get(clr.$colorsMap, 'accent-500');
+  }
+
+  &-neutral {
+    background-color: map-get(clr.$colorsMap, 'neutral-500');
+  }
+  
+  &-lg {
+    height: 35rem;
+    width: 25rem;
+    .card--content--content, .card--content--title {
+      font-size: $fs-600;
+    }
+
+  }
+
+  &-md {
+    height: 25rem;
+    width: 20rem;
+    .card--content--content, .card--content--title {
+      font-size: $fs-300;
+    }
+  }
+
+  &-sm {
+    height: 20rem;
+    width: 15rem;
+    .card--content--content, .card--content--title {
+      font-size: $fs-200;
+    }
+  }
 
   &-simple-card {
     .card--content {
