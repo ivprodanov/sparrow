@@ -60,7 +60,7 @@ function App() {
           
         </div>
         <div className="col-4">
-        <Card title='Simple Card' variant="simple-card" cardImage={GlassImage}>
+        <Thing cardTitle={'Small image card thing'} description={'a big primary image-card'} cardImage={GlassImage}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus minima itaque, a molestiae voluptate
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -71,19 +71,12 @@ function App() {
             Voluptatibus minima itaque, a molestiae voluptate
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus minima itaque, a molestiae voluptate
-          </Card>
+          </Thing>
         </div>
         <div className="col-4">
         <Thing cardTitle={'Simple Card thing'} description={'a small card'}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus minima itaque, a molestiae voluptate
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus minima itaque, a molestiae voluptate
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus minima itaque, a molestiae voluptate
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus minima itaque, a molestiae voluptate
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus minima itaque, a molestiae voluptate</Thing>
+            Lorem ipsum</Thing>
         </div>
       </div>
     </div>

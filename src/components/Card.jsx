@@ -8,14 +8,15 @@ const Card = ({
   size = "md", // default size
   cardImage,
   imageAlt = "image",
+  stylings
 }) => {
   const classNames = `card card-${variant} card-${size}`;
   return (
-    <div className={classNames}>
-      {cardImage && variant != 'simple-card' && <div class="card--image">
+    <div className={stylings ? stylings : classNames}>
+      {cardImage && variant != 'simple-card' && <div className="card--image">
         <img src={cardImage} alt={imageAlt} />
       </div>}
-      <div class="card--content">
+      <div className="card--content">
         <div className="card--content--title">
           <h1>{title}</h1>
         </div>
