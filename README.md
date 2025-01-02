@@ -8,8 +8,10 @@
     - [x] size of card -> solve!
 - [x] Heights & widths utility classes
 - [x] Text decoration and positioning utility classes
-- [ ] FIX -> Col-6 and others appear multiple times
-- [ ] Fix -> breakpoints for smaller screens on all columns are missing!
+- [x] FIX -> Col-6 and others appear multiple times
+- [ ] Fix -> breakpoints for smaller screens on all columns are missing! (investigate further - couldn't "reproduce")
 - [ ] Review and test grid again!
 - [x] margin-inline-auto (m-x-auto) should be added
 - [ ] Thing component -> add direct classnames support
+
+- [ ] Add the grid system to the Demo component.

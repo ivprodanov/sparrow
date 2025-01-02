@@ -116,11 +116,11 @@ $breakpoints: (
   }
 
   // Responsive Column Classes
-  @each $breakpoint, $value in $breakpoints {
+  // @each $breakpoint, $value in $breakpoints {
     .col-#{$i} {
-        @include col($i, 0, $breakpoint);
+        @include col($i, 0);
     }
-  }
+  // }
 
   @each $breakpoint, $value in $breakpoints {
     @include mediaQuery($value) {

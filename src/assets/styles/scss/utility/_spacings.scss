@@ -112,3 +112,9 @@ $direction-map: (
 }
   
 @include generate-spacing-utilities();
+
+.m-x-auto-content {
+    > * {
+        margin-inline: auto;
+    }
+}

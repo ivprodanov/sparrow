@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="container">
       <div className="row gx-2 gy-4">
-        <div className="col p-a-500 shadow-lg primary-300">1</div>
+        <div className="col col-12-xs p-a-500 shadow-lg primary-300">1</div>
         <div className="col p-a-500 shadow-lg primary-500">1</div>
         <div className="col p-a-500 shadow-lg primary-700">1</div>
       </div>
