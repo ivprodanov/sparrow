@@ -1,0 +1,92 @@
+// Height and width scale (in px or rem)
+$height-and-width-scale: (
+  "100": 100px,
+  "200": 200px,
+  "300": 300px,
+  "400": 400px,
+  "500": 500px,
+  "full": 100%, // Full height
+);
+
+// Viewport height and width scale
+$viewport-height-and-width-scale: (
+  "10": 10vh,
+  "25": 25vh,
+  "50": 50vh,
+  "75": 75vh,
+  "100": 100vh,
+);
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @each $key, $height in $height-and-width-scale {
+      .h-#{$key}-#{$breakpoint} {
+        height: $height;
+      }
+    }
+  }
+}
+
+
+// Fixed height utilities
+@each $key, $value in $height-and-width-scale {
+    .h-#{$key} {
+      height: $value;
+    }
+  }
+  
+// Viewport height utilities
+@each $key, $value in $viewport-height-and-width-scale {
+  .h-vh-#{$key} {
+    height: $value;
+  }
+}
+
+// Fixed width utilities
+@each $key, $value in $height-and-width-scale {
+  .w-#{$key} {
+    width: $value;
+  }
+}
+
+// Viewport width utilities
+@each $key, $value in $viewport-height-and-width-scale {
+.w-vw-#{$key} {
+  width: $value;
+}
+}
+  
+// Generic utilities
+.h-auto {
+  height: auto;
+}
+.h-full {
+  height: 100%;
+}
+.h-min {
+  height: min-content;
+}
+.h-max {
+  height: max-content;
+}
+
+// Generic width utilities
+.w-auto {
+  width: auto;
+}
+.w-full {
+  width: 100%;
+}
+.w-min {
+  width: min-content;
+}
+.w-max {
+  width: max-content;
+}

@@ -150,6 +150,53 @@ $line-heights: (
   }
   
 
-.text-center {
-  text-align: center;
+// Text decoration utilities
+.text-decoration {
+  &-none {
+    text-decoration: none;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+  &-line-through {
+    text-decoration: line-through;
+  }
+  &-overline {
+    text-decoration: overline;
+  }
+  &-underline-overline {
+    text-decoration: underline overline;
+  }
+}
+
+// Text transform utilities
+.text-transform {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-lowercase {
+    text-transform: lowercase;
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+  &-none {
+    text-transform: none;
+  }
+}
+
+// Text alignment utilities
+.text-align {
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-justify {
+    text-align: justify;
+  }
 }
