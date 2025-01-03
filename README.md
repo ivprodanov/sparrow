@@ -3,9 +3,8 @@
 ## A design system based on flexbox
 
 ### Todos
-- [ ] Finish Card Thing:
-    - [ ] combine card properties in a reasonable way as to not bloat up the props in Thing Component
-    - [x] size of card -> solve!
+- [ ] combine card properties in a reasonable way as to not bloat up the props in Thing Component
+- [x] size of card -> solve!
 - [x] Heights & widths utility classes
 - [x] Text decoration and positioning utility classes
 - [x] FIX -> Col-6 and others appear multiple times
@@ -15,3 +14,4 @@
 - [ ] Thing component -> add direct classnames support
 
 - [ ] Add the grid system to the Demo component.
+- [ ] Nested Thing Component -> Button in Card doesn't work currently.

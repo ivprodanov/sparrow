@@ -4,7 +4,7 @@ import Glass from '../src/assets/images/glass.jpg'
 
 export const Demo = () => {
   return (
-    <div className="container">
+    <div className="container secondary-100">
       <div className="text-align-center">
         <h1 className="fs-900 fw-700">SPARROW</h1>
         <p>We do "things" different around here.</p>
@@ -47,7 +47,7 @@ export const Demo = () => {
          <Thing description='a small accent card'>
             <p>Or combine Things..</p>
             <br />
-            <Thing description='a small primary rounded button'>Click.</Thing>
+            <Thing event={() => alert(1)} description='a small primary rounded button'>Click.</Thing>
          </Thing>
         </div>
       </div>
