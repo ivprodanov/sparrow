@@ -58,7 +58,8 @@ export const ComponentMappings = (
   event,
   image,
   imageAlt,
-  cardTitle
+  cardTitle,
+  className
 ) => {
   const filterMappings = (mappings, type, keys) => {
     const typeMappings = mappings[type];  // Get specific mappings for the component type
@@ -97,7 +98,7 @@ export const ComponentMappings = (
 
     return "md"; // Default size if no match is found
   };
-  const generateClassNames = (component, sizeClass, additionalClasses) => {
+  const generateClassNames = (component, sizeClass, additionalClasses, className) => {
     let classNames = [];
   
     // Add base class for all cards
@@ -117,6 +118,10 @@ export const ComponentMappings = (
     if (additionalClasses) {
       classNames = classNames.concat(additionalClasses);
     }
+
+    if (className){
+      classNames = classNames.concat(className);
+    }
   
     return classNames.join(" ");
   };
@@ -126,13 +131,13 @@ export const ComponentMappings = (
   const sizeClass = extractSizeClass(component, ThingMappings);
 
   // Generate the class names properly
-  const classNames = generateClassNames(component, sizeClass, filteredClasses);
+  const classNames = generateClassNames(component, sizeClass, filteredClasses, className);
 
   if (component) {
     switch (component.type) {
       case "button":
         return (
-          <Button onClick={event} stylings={filteredClasses.join(" ")}>
+          <Button onClick={event} stylings={[...filteredClasses, className && className].join(" ")}>
             {children}
           </Button>
         );
@@ -146,6 +151,7 @@ export const ComponentMappings = (
             title={cardTitle}
             variant={component.type}
             size={sizeClass}
+            className={className}
           >
             {children}
           </Card>

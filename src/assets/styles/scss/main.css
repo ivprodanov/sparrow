@@ -4644,11 +4644,14 @@ select {
   max-height: 600px;
 }
 .card-simple-card .card--content--content {
+  height: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 12;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: relative;
+  z-index: 10;
 }
 .card-image-card .card--content {
   height: calc(100% - 200px);

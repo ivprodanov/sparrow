@@ -71,11 +71,14 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
       max-height: 600px;
       
       &--content {
+        height: 100%;
         display: -webkit-box;           
         -webkit-line-clamp: 12;          
         -webkit-box-orient: vertical;  
         overflow: hidden;               
         text-overflow: ellipsis;
+        position: relative;
+        z-index: 10;
       }
     }
   }

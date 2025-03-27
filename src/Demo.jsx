@@ -47,7 +47,7 @@ export const Demo = () => {
          <Thing description='a small accent card'>
             <p>Or combine Things..</p>
             <br />
-            <Thing event={() => alert(1)} description='a small primary rounded button'>Click.</Thing>
+            <Thing className={'accent-500'} event={() => alert(1)} description='a small primary rounded button'>Click.</Thing>
          </Thing>
         </div>
       </div>

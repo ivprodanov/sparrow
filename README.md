@@ -11,7 +11,7 @@
 - [ ] Fix -> breakpoints for smaller screens on all columns are missing! (investigate further - couldn't "reproduce")
 - [ ] Review and test grid again!
 - [x] margin-inline-auto (m-x-auto) should be added
-- [ ] Thing component -> add direct classnames support
+- [x] Thing component -> add direct classnames support
 
 - [ ] Add the grid system to the Demo component.
-- [ ] Nested Thing Component -> Button in Card doesn't work currently.
+- [x] Nested Thing Component -> Button in Card doesn't work currently.
