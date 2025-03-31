@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { ComponentMappings, ThingMappings } from "./ThingMappings";
+import { ComponentMappings } from "./ThingMappings";
+import { ThingMappings } from "../mappings/mappings";
 
 export const Thing = ({ description, children, event, cardImage, imageAlt, cardTitle, className }) => {
   const [component, setComponent] = useState(null); 

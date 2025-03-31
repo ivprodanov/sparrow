@@ -14,10 +14,12 @@
 - [ ] Fix -> breakpoints for smaller screens on all columns are missing! (investigate further - couldn't "reproduce")
 - [ ] Add the grid system to the Demo component.
 - [ ] Review and test grid again!
+- [ ] Search for "TODO" (additional reformatting needed)
 
 ## Optimization:
 - [ ] Optimize ComponentMappings (extract mappings | generic functions as helpers)
 - [ ] className support for Things component -> analyze use cases.
+- [ ] On hard refresh styling takes a while to render!
 
 ## Components:
 - Text elements:

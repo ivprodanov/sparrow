@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { ComponentsMappings, ThingMappings } from "./ThingMappings";
+import { ComponentsMappings } from "./ThingMappings";
+import { ThingMappings } from "../mappings/mappings";
+
 
 export const Things = ({ description, events = [] , texts = [] }) => {
     const [components, setComponents] = useState();
