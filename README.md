@@ -15,6 +15,7 @@
 - [ ] Add the grid system to the Demo component.
 - [ ] Review and test grid again!
 - [ ] Search for "TODO" (additional reformatting needed)
+- [ ] Simplify Card
 
 ## Optimization:
 - [ ] Optimize ComponentMappings (extract mappings | generic functions as helpers)

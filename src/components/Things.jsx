@@ -8,8 +8,6 @@ export const Things = ({ description, events = [] , texts = [] }) => {
 
   useEffect(() => {
     let things = determineThings();
-    console.log(ThingMappings[things.type])
-    console.log(things.descriptions)
 
     setComponents(things);
   }, [description]);
@@ -39,7 +37,6 @@ export const Things = ({ description, events = [] , texts = [] }) => {
         eventsObject
     }
 
-    console.log(describedThings)
     return describedThings;
   };
 

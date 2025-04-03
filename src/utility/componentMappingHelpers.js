@@ -1,13 +1,9 @@
 export const filterMappings = (mappings, type, keys) => {
-  const typeMappings = mappings[type]; // Get specific mappings for the component type
+  const typeMappings = mappings[type] || {};
+  const filteredKeys = keys.filter(key => key in typeMappings)
 
-  // Filter the classes based on the given keys
-  return keys.reduce((result, key) => {
-    if (key in typeMappings) {
-      result = result.concat(typeMappings[key]);
-    }
-    return result;
-  }, []);
+  const result = filteredKeys.flatMap(key => typeMappings[key])
+  return result
 };
 
 export const extractSizeClass = (component, mappings) => {

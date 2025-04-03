@@ -27,7 +27,7 @@ export const Demo = () => {
       </div>
       <div className="row m-t-500  shadow-lg p-a-400">
         <div className="col col-12-sm text-align-center">
-          <Thing description={"a medium sized button"}>Button Thing</Thing>
+          <Thing description={"a medium-sized primary button"}>Button Thing</Thing>
         </div>
         <div className="col-3 col-12-sm">
           <p>

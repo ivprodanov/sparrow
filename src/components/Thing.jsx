@@ -12,8 +12,6 @@ export const Thing = ({ description, children, event, cardImage, imageAlt, cardT
     }
 
     let thing = determineThing();
-    console.log("ThingMappings:", ThingMappings[thing.type]);
-    console.log("Thing description:", thing.description);
 
     setComponent(thing);
   }, [description]);
