@@ -1,5 +1,4 @@
 import React from "react";
-import GlassImage from "../assets/images/glass.jpg";
 
 const Card = ({
   title,
@@ -13,6 +12,7 @@ const Card = ({
   const classNames = `card card-${variant} card-${size}`;
   return (
     <div className={stylings ? stylings : classNames}>
+      {console.log(classNames)}
       {cardImage && variant != 'simple-card' && <div className="card--image">
         <img src={cardImage} alt={imageAlt} />
       </div>}

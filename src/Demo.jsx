@@ -20,14 +20,14 @@ export const Demo = () => {
           in this analogy).
         </div>
         <div className="col col-12-sm m-x-auto-content">
-          <Thing description="a small simple card" cardTitle={"Card-Thing"}>
+          <Thing description="a small card" cardTitle={"Card-Thing"}>
             This whole card was created just like that.
           </Thing>
         </div>
       </div>
       <div className="row m-t-500  shadow-lg p-a-400">
         <div className="col col-12-sm text-align-center">
-          <Thing description={"a medium-sized primary button"}>Button Thing</Thing>
+          <Thing description={"a medium-sized secondary button"}>Button Thing</Thing>
         </div>
         <div className="col-3 col-12-sm">
           <p>

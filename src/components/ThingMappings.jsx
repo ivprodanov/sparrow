@@ -1,7 +1,7 @@
 import Button from "./Button";
 import Card from "./Card";
 import { ThingMappings } from "../mappings/mappings";
-import { filterMappings, extractSizeClass, generateClassNames } from "../utility/componentMappingHelpers";
+import { filterMappings, extractSizeClass, generateClassNames, exportVariant } from "../utility/componentMappingHelpers";
 
 export const ComponentMappings = (
   component,
@@ -17,9 +17,10 @@ export const ComponentMappings = (
     component && filterMappings(ThingMappings, component.type, component.description);
 
   const sizeClass = extractSizeClass(component, ThingMappings);
+  const variant = exportVariant(component.description)
 
   const classNames = generateClassNames(component, sizeClass, filteredClasses, className);
-
+  console.log('classNames', classNames, filteredClasses)
   if (component) {
     switch (component.type) {
       case "button":
@@ -34,9 +35,9 @@ export const ComponentMappings = (
           <Card
             cardImage={component.type === "image-card" ? image : null}
             imageAlt={imageAlt}
-            stylings={classNames}  // Pass the properly generated class names
+            // stylings={classNames}
             title={cardTitle}
-            variant={component.type}
+            variant={variant}
             size={sizeClass}
             className={className}
           >

@@ -21,7 +21,7 @@ export const ThingMappings = {
       big: ["lg"],
       "medium-sized": ["md"],
       small: ["sm"],
-      // color
+      // variant
       primary: ["card-primary"],
       secondary: ["card-secondary"],
       accent: ["card-accent"],

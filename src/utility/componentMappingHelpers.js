@@ -1,10 +1,23 @@
+import { ThingMappings } from "../mappings/mappings";
+
 export const filterMappings = (mappings, type, keys) => {
   const typeMappings = mappings[type] || {};
   const filteredKeys = keys.filter(key => key in typeMappings)
 
   const result = filteredKeys.flatMap(key => typeMappings[key])
+  console.log('FILTERED:', result)
   return result
 };
+
+export const exportVariant = (keys) => {
+    let variants = ['primary', 'secondary', 'accent', 'neutral'];
+    for (let key of keys) {
+        if (variants.includes(key)) {
+            return key.toString();
+        }
+        return 'primary'
+    }
+}
 
 export const extractSizeClass = (component, mappings) => {
   if (!component?.type || !mappings[component.type]) {
