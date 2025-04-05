@@ -15,7 +15,10 @@
 - [ ] Add the grid system to the Demo component.
 - [ ] Review and test grid again!
 - [ ] Search for "TODO" (additional reformatting needed)
-- [ ] FIX CARD Component | Simplify | redesign generateClassNames function!
+- FIX CARD Component
+    - [ ] redesign generateClassNames function!
+    - [ ] Render as container instead of a styled component
+    - [ ] Image size -> more than 50%
 
 ## Optimization:
 - [ ] Optimize ComponentMappings (extract mappings | generic functions as helpers)

@@ -5,7 +5,6 @@ export const filterMappings = (mappings, type, keys) => {
   const filteredKeys = keys.filter(key => key in typeMappings)
 
   const result = filteredKeys.flatMap(key => typeMappings[key])
-  console.log('FILTERED:', result)
   return result
 };
 

@@ -35,7 +35,6 @@ export const ComponentMappings = (
           <Card
             cardImage={component.type === "image-card" ? image : null}
             imageAlt={imageAlt}
-            // stylings={classNames}
             title={cardTitle}
             variant={variant}
             size={sizeClass}

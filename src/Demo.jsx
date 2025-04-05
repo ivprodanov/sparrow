@@ -38,7 +38,7 @@ export const Demo = () => {
       </div>
       <div className="row m-t-500 shadow-lg p-a-400">
         <div className="col col-12-sm m-x-auto-content">
-         <Thing description='a small secondary image-card' cardImage={Glass}>
+         <Thing description='a small secondary image-card' className='m-y-900' cardImage={Glass}>
             <p>You can create such cards too</p>
          </Thing>
         </div>
