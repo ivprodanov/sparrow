@@ -3,7 +3,8 @@
 ## A design system based on flexbox
 
 ### Todos
-- [ ] combine card properties in a reasonable way as to not bloat up the props in Thing Component
+
+- [ ] combine card properties in a reasonable way as to not bloat up the props in Thing Component (Could be optimized later on)
 - [x] size of card -> solve!
 - [x] Heights & widths utility classes
 - [x] Text decoration and positioning utility classes
@@ -11,55 +12,56 @@
 - [x] margin-inline-auto (m-x-auto) should be added
 - [x] Thing component -> add direct classnames support
 - [x] Nested Thing Component -> Button in Card doesn't work currently.
-- [ ] Fix -> breakpoints for smaller screens on all columns are missing! (investigate further - couldn't "reproduce")
-- [ ] Add the grid system to the Demo component.
+- [ ] Fix -> breakpoints for smaller screens on all columns are missing! (investigate further - couldn't "reproduce") (?)
 - [ ] Review and test grid again!
 - [ ] Search for "TODO" (additional reformatting needed)
 - FIX CARD Component
-    - [ ] redesign generateClassNames function!
-    - [ ] Render as container instead of a styled component
-    - [ ] Image size -> more than 50%
+  - [x] redesign generateClassNames function!
+  - [ ] Render as container instead of a styled component
+  - [ ] Image size -> more than 50% (?)
 
 ## Optimization:
-- [ ] Optimize ComponentMappings (extract mappings | generic functions as helpers)
+
+- [x] Optimize ComponentMappings (extract mappings | generic functions as helpers)
 - [ ] className support for Things component -> analyze use cases.
 - [ ] On hard refresh styling takes a while to render!
 
 ## Components:
+
 - Text elements:
-    - [ ] Headings
-    - [ ] Paragraphs
+  - [ ] Headings
+  - [ ] Paragraphs
 - Dropdown:
-    - [ ] Dropdown component with multiple choice
+  - [ ] Dropdown component with multiple choice
 - Input:
-    - [ ] Basic input
-    - [ ] Input with button
-    - [ ] Input with icon
-    ------------------------
-    - [ ] Checkbox component
-    - [ ] Radio button component
-    - [ ] Select component
-    - [ ] File component
-    ------------------------
-    - [ ] Textarea component
+  - [ ] Basic input
+  - [ ] Input with button
+  - [ ] Input with icon
+  ***
+  - [ ] Checkbox component
+  - [ ] Radio button component
+  - [ ] Select component
+  - [ ] File component
+  ***
+  - [ ] Textarea component
 - Table:
-    - [ ] Simple table component
-    - [ ] Styled table component (alternating colored rows)
+  - [ ] Simple table component
+  - [ ] Styled table component (alternating colored rows)
 - Carousel:
-    - [ ] Image carousel
-    - [ ] Cards carousel
+  - [ ] Image carousel
+  - [ ] Cards carousel
 - Form Component:
-    - [ ] Form component as a wrapper for input
+  - [ ] Form component as a wrapper for input
 - Breadcrumb component:
-    - [ ] Simple breadcrumb component
-    - [ ] Styled breadcrumb component
+  - [ ] Simple breadcrumb component
+  - [ ] Styled breadcrumb component
 - Modal:
-    - [ ] Modal component (simple)
-    - [ ] Modal component (with buttons | as wrapper)
+  - [ ] Modal component (simple)
+  - [ ] Modal component (with buttons | as wrapper)
 - Containers and layout:
-    - [ ] Container component
-    - [ ] Row component
-    - [ ] Column component
+  - [ ] Container component
+  - [ ] Row component
+  - [ ] Column component
 - Progress bars:
-    - [ ] Spinner loader
-    - [ ] Loading bar
+  - [ ] Spinner loader
+  - [ ] Loading bar
