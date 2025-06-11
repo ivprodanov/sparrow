@@ -128,6 +128,6 @@ P.S. I totally didn't edit this in ChatGPT :)
 
 ## License
 
-This project is open source and available under the [MIT License](./LICENSE).
+This project is open source and available under the [MIT License](./LICENSE.md).
 
 
