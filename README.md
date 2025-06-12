@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/b2536b28-e0eb-4231-981b-0036504165ac)
+
+
 # 🕊️ SPARROW
 
 ## A “describe-it-yourself” design system built on Flexbox
