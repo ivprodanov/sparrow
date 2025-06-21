@@ -57,6 +57,38 @@ Whether you want to tinker, optimize, or build—your involvement is welcome.
 
 ---
 
+## How to implement new components:
+- mappings.js is responsible for the description keywords, for example the button component:
+```js
+
+button: {
+      // size
+      big: ["p-x-700", "p-y-400", "fs-700", "fw-500"],
+      "medium-sized": ["p-x-500", "p-y-200", "fs-500"],
+      small: ["p-x-500", "p-y-200", "fs-200"],
+      // color
+      primary: ["button-primary"],
+      secondary: ["button-secondary"],
+      accent: ["accent-500"],
+      neutral: ["neutral-500"],
+      // borders
+      rounded: ["radius-lg"],
+      bordered: ["border-sm"],
+      "thick-bordered": ["border-md"],
+    },
+
+```
+In order to implement new components, You could extend this file with new mappings or propose a different solution - I'm open to new ideas.
+
+The componentMappingHelpers.js file is another file, responsible for the creation of components. It is relatively well commented (GPT / me) and could also be extended. Feel free to create new utility files, delete or patch existing functionality etc.
+
+The SCSS file main.scss is where all the other relevant SCSS files are imported - this could and should also be freely edited, extended and modified. 
+
+### To test:
+use the Demo.jsx file or create a new one. I was faced with difficulties compiling and building the project so that I could run it as a library - this is another task in and of itself... App.jsx could also be used directly for testing purposes - remember - this project should be compiled as a library in the end (: 
+
+---
+
 ## 🧩 Components (Planned / In Progress)
 
 ### Text Elements
