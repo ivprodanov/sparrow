@@ -161,6 +161,7 @@ This is still a work-in-progress and a bit of a passion project. Expect quirks a
 ---
 P.S. I totally didn't edit this in ChatGPT :)
 
+contact@prodanov.ch - I always respond😌
 ## License
 
 This project is open source and available under the [MIT License](./LICENSE.md).
