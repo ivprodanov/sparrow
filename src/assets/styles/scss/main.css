@@ -277,9 +277,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-100 {
+  color: #e0e7ff;
+}
+
 .secondary-100 {
   background-color: #d1fae5;
   color: #0f172a;
+}
+
+.text-secondary-100 {
+  color: #d1fae5;
 }
 
 .accent-100 {
@@ -287,9 +295,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-100 {
+  color: #ffedd5;
+}
+
 .neutral-100 {
   background-color: #f1f5f9;
   color: #0f172a;
+}
+
+.text-neutral-100 {
+  color: #f1f5f9;
 }
 
 .primary-200 {
@@ -297,9 +313,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-200 {
+  color: #c7d2fe;
+}
+
 .secondary-200 {
   background-color: #a7f3d0;
   color: #0f172a;
+}
+
+.text-secondary-200 {
+  color: #a7f3d0;
 }
 
 .accent-200 {
@@ -307,9 +331,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-200 {
+  color: #fed7aa;
+}
+
 .neutral-200 {
   background-color: #e2e8f0;
   color: #0f172a;
+}
+
+.text-neutral-200 {
+  color: #e2e8f0;
 }
 
 .primary-300 {
@@ -317,9 +349,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-300 {
+  color: #a5b4fc;
+}
+
 .secondary-300 {
   background-color: #6ee7b7;
   color: #0f172a;
+}
+
+.text-secondary-300 {
+  color: #6ee7b7;
 }
 
 .accent-300 {
@@ -327,9 +367,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-300 {
+  color: #fdba74;
+}
+
 .neutral-300 {
   background-color: #cbd5e1;
   color: #0f172a;
+}
+
+.text-neutral-300 {
+  color: #cbd5e1;
 }
 
 .primary-400 {
@@ -337,9 +385,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-400 {
+  color: #818cf8;
+}
+
 .secondary-400 {
   background-color: #34d399;
   color: #0f172a;
+}
+
+.text-secondary-400 {
+  color: #34d399;
 }
 
 .accent-400 {
@@ -347,9 +403,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-400 {
+  color: #fb923c;
+}
+
 .neutral-400 {
   background-color: #94a3b8;
   color: #0f172a;
+}
+
+.text-neutral-400 {
+  color: #94a3b8;
 }
 
 .primary-500 {
@@ -357,9 +421,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-500 {
+  color: #4f46e5;
+}
+
 .secondary-500 {
   background-color: #10b981;
   color: #0f172a;
+}
+
+.text-secondary-500 {
+  color: #10b981;
 }
 
 .accent-500 {
@@ -367,9 +439,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-500 {
+  color: #f97316;
+}
+
 .neutral-500 {
   background-color: #64748b;
   color: #f8fafc;
+}
+
+.text-neutral-500 {
+  color: #64748b;
 }
 
 .primary-600 {
@@ -377,9 +457,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-600 {
+  color: #4338ca;
+}
+
 .secondary-600 {
   background-color: #059669;
   color: #f8fafc;
+}
+
+.text-secondary-600 {
+  color: #059669;
 }
 
 .accent-600 {
@@ -387,9 +475,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-600 {
+  color: #ea580c;
+}
+
 .neutral-600 {
   background-color: #475569;
   color: #f8fafc;
+}
+
+.text-neutral-600 {
+  color: #475569;
 }
 
 .primary-700 {
@@ -397,9 +493,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-700 {
+  color: #3730a3;
+}
+
 .secondary-700 {
   background-color: #047857;
   color: #f8fafc;
+}
+
+.text-secondary-700 {
+  color: #047857;
 }
 
 .accent-700 {
@@ -407,9 +511,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-700 {
+  color: #c2410c;
+}
+
 .neutral-700 {
   background-color: #334155;
   color: #f8fafc;
+}
+
+.text-neutral-700 {
+  color: #334155;
 }
 
 .primary-800 {
@@ -417,9 +529,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-800 {
+  color: #312e81;
+}
+
 .secondary-800 {
   background-color: #065f46;
   color: #f8fafc;
+}
+
+.text-secondary-800 {
+  color: #065f46;
 }
 
 .accent-800 {
@@ -427,9 +547,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-800 {
+  color: #9a3412;
+}
+
 .neutral-800 {
   background-color: #1e293b;
   color: #f8fafc;
+}
+
+.text-neutral-800 {
+  color: #1e293b;
 }
 
 .primary-900 {
@@ -437,9 +565,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-900 {
+  color: #1e1b4b;
+}
+
 .secondary-900 {
   background-color: #064e3b;
   color: #f8fafc;
+}
+
+.text-secondary-900 {
+  color: #064e3b;
 }
 
 .accent-900 {
@@ -447,9 +583,27 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-900 {
+  color: #7c2d12;
+}
+
 .neutral-900 {
   background-color: #0f172a;
   color: #f8fafc;
+}
+
+.text-neutral-900 {
+  color: #0f172a;
+}
+
+.bg-dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 /* TODOs:
@@ -2569,9 +2723,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-100 {
+  color: #e0e7ff;
+}
+
 .secondary-100 {
   background-color: #d1fae5;
   color: #0f172a;
+}
+
+.text-secondary-100 {
+  color: #d1fae5;
 }
 
 .accent-100 {
@@ -2579,9 +2741,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-100 {
+  color: #ffedd5;
+}
+
 .neutral-100 {
   background-color: #f1f5f9;
   color: #0f172a;
+}
+
+.text-neutral-100 {
+  color: #f1f5f9;
 }
 
 .primary-200 {
@@ -2589,9 +2759,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-200 {
+  color: #c7d2fe;
+}
+
 .secondary-200 {
   background-color: #a7f3d0;
   color: #0f172a;
+}
+
+.text-secondary-200 {
+  color: #a7f3d0;
 }
 
 .accent-200 {
@@ -2599,9 +2777,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-200 {
+  color: #fed7aa;
+}
+
 .neutral-200 {
   background-color: #e2e8f0;
   color: #0f172a;
+}
+
+.text-neutral-200 {
+  color: #e2e8f0;
 }
 
 .primary-300 {
@@ -2609,9 +2795,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-300 {
+  color: #a5b4fc;
+}
+
 .secondary-300 {
   background-color: #6ee7b7;
   color: #0f172a;
+}
+
+.text-secondary-300 {
+  color: #6ee7b7;
 }
 
 .accent-300 {
@@ -2619,9 +2813,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-300 {
+  color: #fdba74;
+}
+
 .neutral-300 {
   background-color: #cbd5e1;
   color: #0f172a;
+}
+
+.text-neutral-300 {
+  color: #cbd5e1;
 }
 
 .primary-400 {
@@ -2629,9 +2831,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-400 {
+  color: #818cf8;
+}
+
 .secondary-400 {
   background-color: #34d399;
   color: #0f172a;
+}
+
+.text-secondary-400 {
+  color: #34d399;
 }
 
 .accent-400 {
@@ -2639,9 +2849,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-400 {
+  color: #fb923c;
+}
+
 .neutral-400 {
   background-color: #94a3b8;
   color: #0f172a;
+}
+
+.text-neutral-400 {
+  color: #94a3b8;
 }
 
 .primary-500 {
@@ -2649,9 +2867,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-500 {
+  color: #4f46e5;
+}
+
 .secondary-500 {
   background-color: #10b981;
   color: #0f172a;
+}
+
+.text-secondary-500 {
+  color: #10b981;
 }
 
 .accent-500 {
@@ -2659,9 +2885,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-500 {
+  color: #f97316;
+}
+
 .neutral-500 {
   background-color: #64748b;
   color: #f8fafc;
+}
+
+.text-neutral-500 {
+  color: #64748b;
 }
 
 .primary-600 {
@@ -2669,9 +2903,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-600 {
+  color: #4338ca;
+}
+
 .secondary-600 {
   background-color: #059669;
   color: #f8fafc;
+}
+
+.text-secondary-600 {
+  color: #059669;
 }
 
 .accent-600 {
@@ -2679,9 +2921,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-600 {
+  color: #ea580c;
+}
+
 .neutral-600 {
   background-color: #475569;
   color: #f8fafc;
+}
+
+.text-neutral-600 {
+  color: #475569;
 }
 
 .primary-700 {
@@ -2689,9 +2939,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-700 {
+  color: #3730a3;
+}
+
 .secondary-700 {
   background-color: #047857;
   color: #f8fafc;
+}
+
+.text-secondary-700 {
+  color: #047857;
 }
 
 .accent-700 {
@@ -2699,9 +2957,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-700 {
+  color: #c2410c;
+}
+
 .neutral-700 {
   background-color: #334155;
   color: #f8fafc;
+}
+
+.text-neutral-700 {
+  color: #334155;
 }
 
 .primary-800 {
@@ -2709,9 +2975,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-800 {
+  color: #312e81;
+}
+
 .secondary-800 {
   background-color: #065f46;
   color: #f8fafc;
+}
+
+.text-secondary-800 {
+  color: #065f46;
 }
 
 .accent-800 {
@@ -2719,9 +2993,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-800 {
+  color: #9a3412;
+}
+
 .neutral-800 {
   background-color: #1e293b;
   color: #f8fafc;
+}
+
+.text-neutral-800 {
+  color: #1e293b;
 }
 
 .primary-900 {
@@ -2729,9 +3011,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-900 {
+  color: #1e1b4b;
+}
+
 .secondary-900 {
   background-color: #064e3b;
   color: #f8fafc;
+}
+
+.text-secondary-900 {
+  color: #064e3b;
 }
 
 .accent-900 {
@@ -2739,9 +3029,27 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-900 {
+  color: #7c2d12;
+}
+
 .neutral-900 {
   background-color: #0f172a;
   color: #f8fafc;
+}
+
+.text-neutral-900 {
+  color: #0f172a;
+}
+
+.bg-dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 .radius-none {
@@ -4421,9 +4729,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-100 {
+  color: #e0e7ff;
+}
+
 .secondary-100 {
   background-color: #d1fae5;
   color: #0f172a;
+}
+
+.text-secondary-100 {
+  color: #d1fae5;
 }
 
 .accent-100 {
@@ -4431,9 +4747,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-100 {
+  color: #ffedd5;
+}
+
 .neutral-100 {
   background-color: #f1f5f9;
   color: #0f172a;
+}
+
+.text-neutral-100 {
+  color: #f1f5f9;
 }
 
 .primary-200 {
@@ -4441,9 +4765,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-200 {
+  color: #c7d2fe;
+}
+
 .secondary-200 {
   background-color: #a7f3d0;
   color: #0f172a;
+}
+
+.text-secondary-200 {
+  color: #a7f3d0;
 }
 
 .accent-200 {
@@ -4451,9 +4783,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-200 {
+  color: #fed7aa;
+}
+
 .neutral-200 {
   background-color: #e2e8f0;
   color: #0f172a;
+}
+
+.text-neutral-200 {
+  color: #e2e8f0;
 }
 
 .primary-300 {
@@ -4461,9 +4801,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-300 {
+  color: #a5b4fc;
+}
+
 .secondary-300 {
   background-color: #6ee7b7;
   color: #0f172a;
+}
+
+.text-secondary-300 {
+  color: #6ee7b7;
 }
 
 .accent-300 {
@@ -4471,9 +4819,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-300 {
+  color: #fdba74;
+}
+
 .neutral-300 {
   background-color: #cbd5e1;
   color: #0f172a;
+}
+
+.text-neutral-300 {
+  color: #cbd5e1;
 }
 
 .primary-400 {
@@ -4481,9 +4837,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-400 {
+  color: #818cf8;
+}
+
 .secondary-400 {
   background-color: #34d399;
   color: #0f172a;
+}
+
+.text-secondary-400 {
+  color: #34d399;
 }
 
 .accent-400 {
@@ -4491,9 +4855,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-400 {
+  color: #fb923c;
+}
+
 .neutral-400 {
   background-color: #94a3b8;
   color: #0f172a;
+}
+
+.text-neutral-400 {
+  color: #94a3b8;
 }
 
 .primary-500 {
@@ -4501,9 +4873,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-500 {
+  color: #4f46e5;
+}
+
 .secondary-500 {
   background-color: #10b981;
   color: #0f172a;
+}
+
+.text-secondary-500 {
+  color: #10b981;
 }
 
 .accent-500 {
@@ -4511,9 +4891,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-500 {
+  color: #f97316;
+}
+
 .neutral-500 {
   background-color: #64748b;
   color: #f8fafc;
+}
+
+.text-neutral-500 {
+  color: #64748b;
 }
 
 .primary-600 {
@@ -4521,9 +4909,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-600 {
+  color: #4338ca;
+}
+
 .secondary-600 {
   background-color: #059669;
   color: #f8fafc;
+}
+
+.text-secondary-600 {
+  color: #059669;
 }
 
 .accent-600 {
@@ -4531,9 +4927,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-600 {
+  color: #ea580c;
+}
+
 .neutral-600 {
   background-color: #475569;
   color: #f8fafc;
+}
+
+.text-neutral-600 {
+  color: #475569;
 }
 
 .primary-700 {
@@ -4541,9 +4945,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-700 {
+  color: #3730a3;
+}
+
 .secondary-700 {
   background-color: #047857;
   color: #f8fafc;
+}
+
+.text-secondary-700 {
+  color: #047857;
 }
 
 .accent-700 {
@@ -4551,9 +4963,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-700 {
+  color: #c2410c;
+}
+
 .neutral-700 {
   background-color: #334155;
   color: #f8fafc;
+}
+
+.text-neutral-700 {
+  color: #334155;
 }
 
 .primary-800 {
@@ -4561,9 +4981,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-800 {
+  color: #312e81;
+}
+
 .secondary-800 {
   background-color: #065f46;
   color: #f8fafc;
+}
+
+.text-secondary-800 {
+  color: #065f46;
 }
 
 .accent-800 {
@@ -4571,9 +4999,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-800 {
+  color: #9a3412;
+}
+
 .neutral-800 {
   background-color: #1e293b;
   color: #f8fafc;
+}
+
+.text-neutral-800 {
+  color: #1e293b;
 }
 
 .primary-900 {
@@ -4581,9 +5017,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-900 {
+  color: #1e1b4b;
+}
+
 .secondary-900 {
   background-color: #064e3b;
   color: #f8fafc;
+}
+
+.text-secondary-900 {
+  color: #064e3b;
 }
 
 .accent-900 {
@@ -4591,9 +5035,27 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-900 {
+  color: #7c2d12;
+}
+
 .neutral-900 {
   background-color: #0f172a;
   color: #f8fafc;
+}
+
+.text-neutral-900 {
+  color: #0f172a;
+}
+
+.bg-dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 .card {
@@ -4695,9 +5157,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-100 {
+  color: #e0e7ff;
+}
+
 .secondary-100 {
   background-color: #d1fae5;
   color: #0f172a;
+}
+
+.text-secondary-100 {
+  color: #d1fae5;
 }
 
 .accent-100 {
@@ -4705,9 +5175,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-100 {
+  color: #ffedd5;
+}
+
 .neutral-100 {
   background-color: #f1f5f9;
   color: #0f172a;
+}
+
+.text-neutral-100 {
+  color: #f1f5f9;
 }
 
 .primary-200 {
@@ -4715,9 +5193,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-200 {
+  color: #c7d2fe;
+}
+
 .secondary-200 {
   background-color: #a7f3d0;
   color: #0f172a;
+}
+
+.text-secondary-200 {
+  color: #a7f3d0;
 }
 
 .accent-200 {
@@ -4725,9 +5211,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-200 {
+  color: #fed7aa;
+}
+
 .neutral-200 {
   background-color: #e2e8f0;
   color: #0f172a;
+}
+
+.text-neutral-200 {
+  color: #e2e8f0;
 }
 
 .primary-300 {
@@ -4735,9 +5229,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-300 {
+  color: #a5b4fc;
+}
+
 .secondary-300 {
   background-color: #6ee7b7;
   color: #0f172a;
+}
+
+.text-secondary-300 {
+  color: #6ee7b7;
 }
 
 .accent-300 {
@@ -4745,9 +5247,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-300 {
+  color: #fdba74;
+}
+
 .neutral-300 {
   background-color: #cbd5e1;
   color: #0f172a;
+}
+
+.text-neutral-300 {
+  color: #cbd5e1;
 }
 
 .primary-400 {
@@ -4755,9 +5265,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-400 {
+  color: #818cf8;
+}
+
 .secondary-400 {
   background-color: #34d399;
   color: #0f172a;
+}
+
+.text-secondary-400 {
+  color: #34d399;
 }
 
 .accent-400 {
@@ -4765,9 +5283,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-400 {
+  color: #fb923c;
+}
+
 .neutral-400 {
   background-color: #94a3b8;
   color: #0f172a;
+}
+
+.text-neutral-400 {
+  color: #94a3b8;
 }
 
 .primary-500 {
@@ -4775,9 +5301,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-500 {
+  color: #4f46e5;
+}
+
 .secondary-500 {
   background-color: #10b981;
   color: #0f172a;
+}
+
+.text-secondary-500 {
+  color: #10b981;
 }
 
 .accent-500 {
@@ -4785,9 +5319,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-500 {
+  color: #f97316;
+}
+
 .neutral-500 {
   background-color: #64748b;
   color: #f8fafc;
+}
+
+.text-neutral-500 {
+  color: #64748b;
 }
 
 .primary-600 {
@@ -4795,9 +5337,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-600 {
+  color: #4338ca;
+}
+
 .secondary-600 {
   background-color: #059669;
   color: #f8fafc;
+}
+
+.text-secondary-600 {
+  color: #059669;
 }
 
 .accent-600 {
@@ -4805,9 +5355,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-600 {
+  color: #ea580c;
+}
+
 .neutral-600 {
   background-color: #475569;
   color: #f8fafc;
+}
+
+.text-neutral-600 {
+  color: #475569;
 }
 
 .primary-700 {
@@ -4815,9 +5373,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-700 {
+  color: #3730a3;
+}
+
 .secondary-700 {
   background-color: #047857;
   color: #f8fafc;
+}
+
+.text-secondary-700 {
+  color: #047857;
 }
 
 .accent-700 {
@@ -4825,9 +5391,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-700 {
+  color: #c2410c;
+}
+
 .neutral-700 {
   background-color: #334155;
   color: #f8fafc;
+}
+
+.text-neutral-700 {
+  color: #334155;
 }
 
 .primary-800 {
@@ -4835,9 +5409,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-800 {
+  color: #312e81;
+}
+
 .secondary-800 {
   background-color: #065f46;
   color: #f8fafc;
+}
+
+.text-secondary-800 {
+  color: #065f46;
 }
 
 .accent-800 {
@@ -4845,9 +5427,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-800 {
+  color: #9a3412;
+}
+
 .neutral-800 {
   background-color: #1e293b;
   color: #f8fafc;
+}
+
+.text-neutral-800 {
+  color: #1e293b;
 }
 
 .primary-900 {
@@ -4855,9 +5445,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-900 {
+  color: #1e1b4b;
+}
+
 .secondary-900 {
   background-color: #064e3b;
   color: #f8fafc;
+}
+
+.text-secondary-900 {
+  color: #064e3b;
 }
 
 .accent-900 {
@@ -4865,9 +5463,27 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-900 {
+  color: #7c2d12;
+}
+
 .neutral-900 {
   background-color: #0f172a;
   color: #f8fafc;
+}
+
+.text-neutral-900 {
+  color: #0f172a;
+}
+
+.bg-dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 .input, .textarea, .select {
@@ -5102,9 +5718,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-100 {
+  color: #e0e7ff;
+}
+
 .secondary-100 {
   background-color: #d1fae5;
   color: #0f172a;
+}
+
+.text-secondary-100 {
+  color: #d1fae5;
 }
 
 .accent-100 {
@@ -5112,9 +5736,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-100 {
+  color: #ffedd5;
+}
+
 .neutral-100 {
   background-color: #f1f5f9;
   color: #0f172a;
+}
+
+.text-neutral-100 {
+  color: #f1f5f9;
 }
 
 .primary-200 {
@@ -5122,9 +5754,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-200 {
+  color: #c7d2fe;
+}
+
 .secondary-200 {
   background-color: #a7f3d0;
   color: #0f172a;
+}
+
+.text-secondary-200 {
+  color: #a7f3d0;
 }
 
 .accent-200 {
@@ -5132,9 +5772,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-200 {
+  color: #fed7aa;
+}
+
 .neutral-200 {
   background-color: #e2e8f0;
   color: #0f172a;
+}
+
+.text-neutral-200 {
+  color: #e2e8f0;
 }
 
 .primary-300 {
@@ -5142,9 +5790,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-300 {
+  color: #a5b4fc;
+}
+
 .secondary-300 {
   background-color: #6ee7b7;
   color: #0f172a;
+}
+
+.text-secondary-300 {
+  color: #6ee7b7;
 }
 
 .accent-300 {
@@ -5152,9 +5808,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-300 {
+  color: #fdba74;
+}
+
 .neutral-300 {
   background-color: #cbd5e1;
   color: #0f172a;
+}
+
+.text-neutral-300 {
+  color: #cbd5e1;
 }
 
 .primary-400 {
@@ -5162,9 +5826,17 @@ select {
   color: #0f172a;
 }
 
+.text-primary-400 {
+  color: #818cf8;
+}
+
 .secondary-400 {
   background-color: #34d399;
   color: #0f172a;
+}
+
+.text-secondary-400 {
+  color: #34d399;
 }
 
 .accent-400 {
@@ -5172,9 +5844,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-400 {
+  color: #fb923c;
+}
+
 .neutral-400 {
   background-color: #94a3b8;
   color: #0f172a;
+}
+
+.text-neutral-400 {
+  color: #94a3b8;
 }
 
 .primary-500 {
@@ -5182,9 +5862,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-500 {
+  color: #4f46e5;
+}
+
 .secondary-500 {
   background-color: #10b981;
   color: #0f172a;
+}
+
+.text-secondary-500 {
+  color: #10b981;
 }
 
 .accent-500 {
@@ -5192,9 +5880,17 @@ select {
   color: #0f172a;
 }
 
+.text-accent-500 {
+  color: #f97316;
+}
+
 .neutral-500 {
   background-color: #64748b;
   color: #f8fafc;
+}
+
+.text-neutral-500 {
+  color: #64748b;
 }
 
 .primary-600 {
@@ -5202,9 +5898,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-600 {
+  color: #4338ca;
+}
+
 .secondary-600 {
   background-color: #059669;
   color: #f8fafc;
+}
+
+.text-secondary-600 {
+  color: #059669;
 }
 
 .accent-600 {
@@ -5212,9 +5916,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-600 {
+  color: #ea580c;
+}
+
 .neutral-600 {
   background-color: #475569;
   color: #f8fafc;
+}
+
+.text-neutral-600 {
+  color: #475569;
 }
 
 .primary-700 {
@@ -5222,9 +5934,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-700 {
+  color: #3730a3;
+}
+
 .secondary-700 {
   background-color: #047857;
   color: #f8fafc;
+}
+
+.text-secondary-700 {
+  color: #047857;
 }
 
 .accent-700 {
@@ -5232,9 +5952,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-700 {
+  color: #c2410c;
+}
+
 .neutral-700 {
   background-color: #334155;
   color: #f8fafc;
+}
+
+.text-neutral-700 {
+  color: #334155;
 }
 
 .primary-800 {
@@ -5242,9 +5970,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-800 {
+  color: #312e81;
+}
+
 .secondary-800 {
   background-color: #065f46;
   color: #f8fafc;
+}
+
+.text-secondary-800 {
+  color: #065f46;
 }
 
 .accent-800 {
@@ -5252,9 +5988,17 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-800 {
+  color: #9a3412;
+}
+
 .neutral-800 {
   background-color: #1e293b;
   color: #f8fafc;
+}
+
+.text-neutral-800 {
+  color: #1e293b;
 }
 
 .primary-900 {
@@ -5262,9 +6006,17 @@ select {
   color: #f8fafc;
 }
 
+.text-primary-900 {
+  color: #1e1b4b;
+}
+
 .secondary-900 {
   background-color: #064e3b;
   color: #f8fafc;
+}
+
+.text-secondary-900 {
+  color: #064e3b;
 }
 
 .accent-900 {
@@ -5272,9 +6024,27 @@ select {
   color: #f8fafc;
 }
 
+.text-accent-900 {
+  color: #7c2d12;
+}
+
 .neutral-900 {
   background-color: #0f172a;
   color: #f8fafc;
+}
+
+.text-neutral-900 {
+  color: #0f172a;
+}
+
+.bg-dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 @keyframes carouselFadeIn {

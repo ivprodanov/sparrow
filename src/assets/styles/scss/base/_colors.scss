@@ -92,17 +92,34 @@ $colorNameMap: ('primary', 'secondary', 'accent', 'neutral');
     $value: $i * 100;
 
     @each $color in $colorNameMap {
-        $key: #{$color}-#{$value}; // Dynamically build the key
+        $key: #{$color}-#{$value}; 
         @if map-has-key($colorsMap, $key) {
             $bg-color: map-get($colorsMap, $key);
             $text-color: inverted-text-color($bg-color);
 
+            // Existing combined background + text utility
             .#{$color}-#{$value} {
-                background-color: $bg-color; // Access the map value
+                background-color: $bg-color; 
                 color: $text-color;
             }
+
+            // NEW: Text-only utility
+            .text-#{$color}-#{$value} {
+                color: $bg-color;
+            }
+
         } @else {
             @warn "Key `#{$key}` does not exist in $colorsMap.";
         }
     }
+}
+
+// Add global background helper classes at the very bottom
+.bg-dark {
+    background-color: $background-dark;
+    color: $text-light;
+}
+.bg-light {
+    background-color: $background-light;
+    color: $text-dark;
 }

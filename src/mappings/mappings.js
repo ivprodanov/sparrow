@@ -88,14 +88,15 @@ input: {
   // TYPOGRAPHY
   // ------------------------------------------------------------------
   heading: {
-    // We can use 'sizes' to determine the HTML tag level (h1, h2, etc.)
     sizes: { h1: "1", h2: "2", h3: "3", h4: "4", h5: "5", h6: "6", huge: "1", small: "5" },
-    variants: { primary: "primary-500", secondary: "secondary-500", accent: "accent-500", neutral: "neutral-500" }, // Maps to text colors if needed
+    // Updated variants to use text classes
+    variants: { primary: "text-primary-500", secondary: "text-secondary-500", accent: "text-accent-500", neutral: "text-neutral-500" }, 
     modifiers: { ...textModifiers }
   },
   paragraph: {
     sizes: { big: "fs-500", "medium-sized": "fs-300", small: "fs-200" },
-    variants: { primary: "primary-500", secondary: "secondary-500", accent: "accent-500", neutral: "neutral-500", muted: "text-muted" },
+    // Updated variants to use text classes
+    variants: { primary: "text-primary-500", secondary: "text-secondary-500", accent: "text-accent-500", neutral: "text-neutral-500", muted: "text-neutral-400" },
     modifiers: { ...textModifiers, lead: ["fs-500", "fw-500"] }
   },
 
