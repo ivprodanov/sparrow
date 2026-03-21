@@ -67,11 +67,13 @@ $breakpoints: (
   margin-right: auto;
 }
 
+
+
 // Row (Flex container)
 .row {
   display: flex;
   flex-wrap: wrap;
-
+ width: 100%;
   // Generate gutter classes dynamically
   @each $key, $value in $gutters {
     &.gx-#{$key} {
@@ -150,4 +152,20 @@ $breakpoints: (
 @mixin fontSize($size) {
   font-size: $size; // Fallback in px
   font-size: calculateRem($size);
+}
+
+@media (max-width: 768px) {
+    .col-12-md, .col-12-sm {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    // Force "loose" rows to stop pushing horizontal margins on mobile
+    .loose.row {
+        gap: 1rem; // Use a standard small gap instead of large desktop gutters
+        margin: 0;
+    }
 }

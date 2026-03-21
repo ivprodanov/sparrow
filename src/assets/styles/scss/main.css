@@ -630,6 +630,7 @@ select {
 .row {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 .row.gx-0 {
   gap: 0;
@@ -2789,6 +2790,19 @@ select {
     max-width: 100% !important;
   }
 }
+@media (max-width: 768px) {
+  .col-12-md, .col-12-sm {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .loose.row {
+    gap: 1rem;
+    margin: 0;
+  }
+}
 .primary-100 {
   background-color: #e0e7ff;
   color: #0f172a;
@@ -3964,9 +3978,10 @@ select {
 }
 
 .container {
-  padding-inline: 2em;
-  margin-inline: auto;
-  max-width: 80rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 2rem;
 }
 @media (max-width: 768px) {
   .container {
@@ -5257,6 +5272,13 @@ select {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.card, .accordion {
+  box-sizing: border-box;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .primary-100 {

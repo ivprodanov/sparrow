@@ -134,3 +134,10 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
     flex-direction: column;
   }
 }
+
+.card, .accordion {
+    box-sizing: border-box; // Ensures padding doesn't make the card wider than 100%
+    width: 100%;
+    overflow-wrap: break-word; // Prevents "Dynamic Result" from stretching the card
+    word-break: break-word;
+}
