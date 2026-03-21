@@ -26,6 +26,8 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 
   &-primary {
     background-color: map-get(clr.$colorsMap, 'primary-500');
@@ -44,24 +46,24 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
   }
   
   &-lg {
-    min-height: 35rem; /* Changed from height */
-    width: 100%;       /* Changed from 25rem to respect grid columns */
+    min-height: 20rem; /* Changed from height: 35rem */
+    width: 100%;       /* Changed from width: 25rem */
     .card--content--content, .card--content--title {
       font-size: $fs-600;
     }
   }
 
   &-md {
-    min-height: 25rem; /* Changed from height */
-    width: 100%;       /* Changed from 20rem */
+    min-height: 12rem; /* Changed from height: 25rem */
+    width: 100%;       /* Changed from width: 20rem */
     .card--content--content, .card--content--title {
       font-size: $fs-300;
     }
   }
 
   &-sm {
-    min-height: 20rem; /* Changed from height */
-    width: 100%;       /* Changed from 15rem */
+    min-height: 8rem;  /* Changed from height: 20rem */
+    width: 100%;       /* Changed from width: 15rem */
     .card--content--content, .card--content--title {
       font-size: $fs-200;
     }
@@ -99,63 +101,6 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
     }
   }
 
-  // &:hover {
-  //   backdrop-filter: blur(0);
-  //   -webkit-backdrop-filter: blur(0);
-  //   cursor: pointer;
-  //   transform: scale($card-hover-scale);
-
-  //   .card--content {
-  //     text-shadow: 2px 2px 8px black;
-  //     transition: text-shadow 0.5s ease;
-  //   }
-
-  //   .card--image img {
-  //     clip-path: $card-image-clip-hover;
-  //     transition: all 0.5s ease;
-  //   }
-  // }
-
-  // .card--content {
-  //   background-color: $card-text-bg;
-  //   color: $card-text-color;
-  //   border-bottom-left-radius: $card-border-radius;
-  //   border-bottom-right-radius: $card-border-radius;
-  //   padding: $card-text-padding;
-  //   font-size: $card-text-font-size;
-  //   font-family: $card-text-font-family;
-  //   position: absolute;
-  //   bottom: 0;
-  //   transition: all 0.5s ease;
-
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     border-top: 80px solid rgba(255, 255, 255, 0.31);
-  //     border-right: 80px solid transparent;
-  //     width: 0;
-  //     transition: all 0.5s ease;
-  //   }
-
-  //   &::after {
-  //     content: '';
-  //     position: absolute;
-  //     bottom: 0;
-  //     right: 0;
-  //     border-bottom-right-radius: $card-border-radius;
-  //     border-bottom: 80px solid rgba(255, 255, 255, 0.31);
-  //     border-left: 80px solid transparent;
-  //     width: 0;
-  //   }
-
-  //   &:hover::before {
-  //     border-top: 100px solid rgba(157, 184, 184, 0.384);
-  //     border-right: 160px solid transparent;
-  //   }
-  // }
-
   .card--image {
     position: relative;
     img {
@@ -167,18 +112,25 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
       border-radius: 20px;
     }
   }
-}
 
-// Ensure that the component in HTML uses the correct classes dynamically
-.card--image {
-  position: relative;
-  width: 100%;
-  height: 50%;
-}
+  .card--image {
+    width: 100%;
+    margin-bottom: 1rem; // Adds breathing room between image and text
 
-.card--content {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 50%;
+    img {
+      width: 100%;
+      height: 200px; // Gives the image a solid, reliable footprint
+      object-fit: cover; // Ensures the image crops beautifully instead of stretching
+      border-radius: 8px; // Matches the inner padding curve
+      display: block;
+      transition: all 0.5s ease;
+    }
+  }
+
+  // Add this to let flexbox handle the text area natively!
+  .card--content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+  }
 }

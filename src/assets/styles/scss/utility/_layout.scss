@@ -2,5 +2,9 @@
     padding-inline: 2em;
     margin-inline: auto;
     max-width: 80rem;
-}
 
+    // Give mobile screens more room to breathe
+    @media (max-width: 768px) {
+        padding-inline: 1rem;
+    }
+}

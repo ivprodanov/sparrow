@@ -108,30 +108,18 @@ $breakpoints: (
   }
 }
 
-// Column Class
+// Column Class Loop
 @for $i from 1 through $grid-columns {
 
   .col {
     @include col('default', 0); // Default column
   }
 
-  // Responsive Column Classes
-  // @each $breakpoint, $value in $breakpoints {
-    .col-#{$i} {
-        @include col($i, 0);
-    }
-  // }
-
-  @each $breakpoint, $value in $breakpoints {
-    @include mediaQuery($value) {
-      .col-#{$i}-#{$breakpoint} {
-        @include col($i, 0, $breakpoint);
-      }
-    }
+  .col-#{$i} {
+      @include col($i, 0);
   }
 
-
-  // Generate gx-* specific column widths
+  // Generate gx-* specific column widths FIRST
   @each $key, $value in $gutters {
     .gx-#{$key} {
       justify-content: space-between;
@@ -144,6 +132,17 @@ $breakpoints: (
   @each $key, $value in $gutters {
     .gy-#{$key} {
       margin: $value 0;
+    }
+  }
+
+  // Responsive Column Classes placed AFTER gx-* to override them naturally
+  // We also target [class*="gx-"] to forcefully beat the specificity of the gutter loop!
+  @each $breakpoint, $value in $breakpoints {
+    @include mediaQuery($value) {
+      .col-#{$i}-#{$breakpoint},
+      [class*="gx-"] .col-#{$i}-#{$breakpoint} {
+        @include col($i, 0);
+      }
     }
   }
 }
