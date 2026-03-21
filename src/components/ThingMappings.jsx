@@ -10,6 +10,10 @@ import FormWrapper from "./FormWrapper";
 
 import { ThingMappings } from "../mappings/mappings";
 import { parseDescription } from "../utility/componentMappingHelpers";
+import { Heading, Paragraph } from "./Typography";
+import { Column, Container, Row } from "./Layout";
+import ImageCarousel from "./ImageCarousel";
+import CardCarousel from "./CardCarousel";
 
 export const ComponentMappings = (
   component,
@@ -18,7 +22,7 @@ export const ComponentMappings = (
   image,
   imageAlt,
   cardTitle,
-  customClassName
+  customClassName,
 ) => {
   if (!component) return null;
 
@@ -26,11 +30,13 @@ export const ComponentMappings = (
   const { size, variant, classes } = parseDescription(
     component.type,
     component.description,
-    ThingMappings
+    ThingMappings,
   );
 
   // 2. Combine the mapped utility classes with any user-provided classes
-  const combinedClassName = [...classes, customClassName].filter(Boolean).join(" ");
+  const combinedClassName = [...classes, customClassName]
+    .filter(Boolean)
+    .join(" ");
 
   switch (component.type) {
     // ------------------------------------------------------------------
@@ -80,9 +86,15 @@ export const ComponentMappings = (
           className={combinedClassName}
           onChange={event}
           // Pass a default icon if requested (you can replace '🔍' with an actual SVG/Icon component)
-          icon={hasIcon ? <span>🔍</span> : null} 
+          icon={hasIcon ? <span>🔍</span> : null}
           // Pass a fully formed Sparrow button if requested
-          button={hasButton ? <Button size={size} variant={variant}>Submit</Button> : null} 
+          button={
+            hasButton ? (
+              <Button size={size} variant={variant}>
+                Submit
+              </Button>
+            ) : null
+          }
         />
       );
     }
@@ -116,7 +128,9 @@ export const ComponentMappings = (
       return (
         <Select
           // If children is an array, we map them as options, otherwise use a fallback
-          options={Array.isArray(children) ? children : ["Option 1", "Option 2"]}
+          options={
+            Array.isArray(children) ? children : ["Option 1", "Option 2"]
+          }
           variant={variant}
           size={size}
           className={combinedClassName}
@@ -136,15 +150,77 @@ export const ComponentMappings = (
       );
 
     case "form":
-      // The wrapper itself doesn't need sizes/variants, just the layout modifiers 
+      // The wrapper itself doesn't need sizes/variants, just the layout modifiers
       return (
         <FormWrapper className={combinedClassName} onSubmit={event}>
           {children}
         </FormWrapper>
       );
 
+    // ------------------------------------------------------------------
+    // TYPOGRAPHY
+    // ------------------------------------------------------------------
+    case "heading":
+      return (
+        <Heading
+          level={size} // "1", "2", etc. mapped from the size dictionary
+          className={combinedClassName}
+        >
+          {children || cardTitle || "Heading Text"}
+        </Heading>
+      );
+
+    case "paragraph":
+      return (
+        <Paragraph className={combinedClassName}>
+          {children || cardTitle || "Lorem ipsum dolor sit amet."}
+        </Paragraph>
+      );
+
+    // ------------------------------------------------------------------
+    // LAYOUT & CONTAINERS
+    // ------------------------------------------------------------------
+    case "container":
+      return <Container className={combinedClassName}>{children}</Container>;
+
+    case "row":
+      return <Row className={combinedClassName}>{children}</Row>;
+
+    case "column":
+      return (
+        <Column
+          sizeClass={size === "md" ? "" : size} // Ignore default "md" to let flexbox "col" take over
+          className={combinedClassName}
+        >
+          {children}
+        </Column>
+      );
+
+    // ... inside ComponentMappings switch statement ...
+
+    case "image-carousel":
+      return (
+        <ImageCarousel
+          // If the user passes an array inside <Thing>, we use it. Otherwise, empty array fallback.
+          images={Array.isArray(children) ? children : []}
+          variant={variant}
+          size={size}
+          className={combinedClassName}
+        />
+      );
+
+    case "card-carousel":
+      return (
+        <CardCarousel
+          cards={Array.isArray(children) ? children : []}
+          variant={variant}
+          size={size}
+          className={combinedClassName}
+        />
+      );
+
     default:
-      console.warn(`Sparrow: Unrecognized component type -> ${component.type}`);
+      console.warn(`Component type "${component.type}" is not supported yet.`);
       return null;
   }
 };
@@ -155,12 +231,12 @@ export const ComponentMappings = (
 export const ComponentsMappings = (pluralComponent) => {
   if (!pluralComponent) return null;
 
-  const singularType = pluralComponent.type.replace(/s$/, '');
+  const singularType = pluralComponent.type.replace(/s$/, "");
 
   return Array.from({ length: pluralComponent.numberOfThings }, (_, index) => {
     const singularConfig = {
       type: singularType,
-      description: pluralComponent.descriptions, 
+      description: pluralComponent.descriptions,
     };
 
     const itemText = pluralComponent.texts[index] || `Item ${index + 1}`;
@@ -175,7 +251,7 @@ export const ComponentsMappings = (pluralComponent) => {
           null,
           null,
           itemText,
-          ""
+          "",
         )}
       </div>
     );

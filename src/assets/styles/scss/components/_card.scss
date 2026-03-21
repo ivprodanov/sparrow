@@ -44,25 +44,24 @@ $card-image-clip-hover: polygon(0% 0%, 50% 100%, 100% 100%, 50% 0%);
   }
   
   &-lg {
-    height: 35rem;
-    width: 25rem;
+    min-height: 35rem; /* Changed from height */
+    width: 100%;       /* Changed from 25rem to respect grid columns */
     .card--content--content, .card--content--title {
       font-size: $fs-600;
     }
-
   }
 
   &-md {
-    height: 25rem;
-    width: 20rem;
+    min-height: 25rem; /* Changed from height */
+    width: 100%;       /* Changed from 20rem */
     .card--content--content, .card--content--title {
       font-size: $fs-300;
     }
   }
 
   &-sm {
-    height: 20rem;
-    width: 15rem;
+    min-height: 20rem; /* Changed from height */
+    width: 100%;       /* Changed from 15rem */
     .card--content--content, .card--content--title {
       font-size: $fs-200;
     }

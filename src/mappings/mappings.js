@@ -19,6 +19,16 @@ const formVariants = {
   neutral: "neutral"
 };
 
+const textModifiers = {
+  centered: ["text-align-center"],
+  right: ["text-align-right"],
+  bold: ["fw-700", "ubuntu-bold"],
+  light: ["fw-300", "ubuntu-light"],
+  italic: ["ubuntu-regular-italic"],
+  uppercase: ["text-transform-uppercase"],
+  underline: ["text-decoration-underline"]
+};
+
 export const ThingMappings = {
   button: {
     sizes: { big: "lg", "medium-sized": "md", small: "sm" },
@@ -72,5 +82,64 @@ input: {
     sizes: {},
     variants: {},
     modifiers: { "inline": ["form-inline"], "stacked": ["form-stacked"] }
+  },
+
+  // ------------------------------------------------------------------
+  // TYPOGRAPHY
+  // ------------------------------------------------------------------
+  heading: {
+    // We can use 'sizes' to determine the HTML tag level (h1, h2, etc.)
+    sizes: { h1: "1", h2: "2", h3: "3", h4: "4", h5: "5", h6: "6", huge: "1", small: "5" },
+    variants: { primary: "primary-500", secondary: "secondary-500", accent: "accent-500", neutral: "neutral-500" }, // Maps to text colors if needed
+    modifiers: { ...textModifiers }
+  },
+  paragraph: {
+    sizes: { big: "fs-500", "medium-sized": "fs-300", small: "fs-200" },
+    variants: { primary: "primary-500", secondary: "secondary-500", accent: "accent-500", neutral: "neutral-500", muted: "text-muted" },
+    modifiers: { ...textModifiers, lead: ["fs-500", "fw-500"] }
+  },
+
+  // ------------------------------------------------------------------
+  // LAYOUT & CONTAINERS
+  // ------------------------------------------------------------------
+  container: {
+    sizes: {}, // Usually dictated by max-width in SCSS
+    variants: {},
+    modifiers: { fluid: ["w-full", "max-w-none"] } // If you want a full-bleed container
+  },
+  row: {
+    sizes: {},
+    variants: {},
+    modifiers: { 
+      // Map natural language to your gutter classes (gx-*, gy-*)
+      "tight": ["gx-2", "gy-2"],
+      "loose": ["gx-6", "gy-6"],
+      "centered": ["justify-content-center", "align-items-center"] // Assuming flexbox utilities
+    }
+  },
+  column: {
+    // Map natural fractions to your 12-column grid system classes!
+    sizes: { 
+      full: "col-12", 
+      half: "col-6", 
+      third: "col-4", 
+      quarter: "col-3",
+      "two-thirds": "col-8",
+      "three-quarters": "col-9"
+    },
+    variants: {},
+    modifiers: { ...textModifiers } // Handy to text-align content inside a column
+  },
+
+  "image-carousel": {
+    sizes: { big: "lg", "medium-sized": "md", small: "sm" },
+    variants: { primary: "primary", secondary: "secondary", accent: "accent", neutral: "neutral" },
+    modifiers: { ...sharedModifiers } 
+  },
+
+  "card-carousel": {
+    sizes: { big: "lg", "medium-sized": "md", small: "sm" },
+    variants: { primary: "primary", secondary: "secondary", accent: "accent", neutral: "neutral" },
+    modifiers: { ...sharedModifiers }
   }
 };
