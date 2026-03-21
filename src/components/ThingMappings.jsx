@@ -14,6 +14,12 @@ import { Heading, Paragraph } from "./Typography";
 import { Column, Container, Row } from "./Layout";
 import ImageCarousel from "./ImageCarousel";
 import CardCarousel from "./CardCarousel";
+import { Accordion } from "./Accordion";
+import { Tabs } from "./Tabs";
+import { Badge } from "./Badge";
+import { BarChart } from "./BarChart";
+import { Breadcrumb } from "./Breadcrumb";
+import { Modal } from "./Modal";
 
 export const ComponentMappings = (
   component,
@@ -23,6 +29,7 @@ export const ComponentMappings = (
   imageAlt,
   cardTitle,
   customClassName,
+  props
 ) => {
   if (!component) return null;
 
@@ -218,11 +225,69 @@ export const ComponentMappings = (
           className={combinedClassName}
         />
       );
+      case "badge":
+  return (
+    <Badge variant={component.variant} className={component.classes}>
+      {children}
+    </Badge>
+  );
+
+  case "accordion":
+  return (
+    <Accordion 
+      variant={component.variant} 
+      title={cardTitle} 
+      className={component.classes}
+    >
+      {children}
+    </Accordion>
+  );
+
+  case "tabs":
+  return (
+    <Tabs 
+      variant={component.variant} 
+      items={children} // Expecting [{ label: '..', content: <.. /> }]
+      className={component.classes}
+    />
+  );
+  case "bar-chart":
+  return (
+    <BarChart 
+      variant={component.variant} 
+      data={children} // Expecting [{ label: 'Mon', value: 45 }, ...]
+      className={component.classes}
+    />
+  );
+  // Inside ComponentMappings.jsx
+
+case "breadcrumb":
+  return (
+    <Breadcrumb 
+      variant={component.variant} 
+      items={children} // Expecting an array: [{label: 'Home', link: '/'}]
+      className={component.classes} 
+    />
+  );
+
+case "modal":
+  return (
+    <Modal 
+      isOpen={props.isOpen} 
+      onClose={props.onClose} 
+      title={props.cardTitle || props.title} 
+      variant={component.variant}
+      className={component.classes}
+    >
+      {children}
+    </Modal>
+  );
 
     default:
       console.warn(`Component type "${component.type}" is not supported yet.`);
       return null;
   }
+
 };
 
 // ------------------------------------------------------------------

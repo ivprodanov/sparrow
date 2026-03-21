@@ -114,12 +114,27 @@ $colorNameMap: ('primary', 'secondary', 'accent', 'neutral');
     }
 }
 
-// Add global background helper classes at the very bottom
+// Global Theme Containers
 .bg-dark {
     background-color: $background-dark;
     color: $text-light;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .bg-light {
     background-color: $background-light;
     color: $text-dark;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Target neutral cards specifically for theme flipping
+.theme-light {
+    .neutral-800 {
+        background-color: $whiteClr !important;
+        color: $text-dark !important;
+        border: 1px solid $background-muted !important;
+    }
+    .text-light, .text-neutral-100, .text-neutral-300 {
+        color: $text-dark !important;
+    }
 }

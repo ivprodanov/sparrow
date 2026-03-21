@@ -244,11 +244,32 @@ export const Demo = () => {
         {/* ==========================================
             7. FAQ SECTION
             ========================================== */}
-        <Thing description="centered column" className="m-b-500 p-x-400">
-          <Thing description="h2 heading" className="fs-700 fw-700 m-b-200 text-neutral-100">
-            Frequently Asked Questions
-          </Thing>
-        </Thing>
+        <section id="faq" className="container m-b-900 p-x-400">
+  <Thing description="centered column" className="m-b-600">
+    <Thing description="h2 heading" className="text-light m-b-200">FAQs</Thing>
+  </Thing>
+
+  <div className="col-8 col-12-md m-x-auto-content">
+    <Thing 
+      description="neutral rounded accordion" 
+      className="neutral-800" 
+      cardTitle="Is Sparrow production ready?"
+    >
+      <Thing description="paragraph" className="text-neutral-300">
+        Absolutely. Sparrow is built on top of standard React and SCSS practices, ensuring stability across all modern browsers.
+      </Thing>
+    </Thing>
+
+    <Thing 
+      description="primary rounded accordion" 
+      cardTitle="How do I add custom styles?"
+    >
+      <Thing description="paragraph">
+        You can pass standard `className` props to any Thing, or update the `_colors.scss` file to change the global theme.
+      </Thing>
+    </Thing>
+  </div>
+</section>
         
         <Thing description="centered column" className="m-b-700 p-x-400">
           {/* Added h-auto and reduced m-b gap */}

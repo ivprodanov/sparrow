@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ComponentMappings } from "./ThingMappings";
 import { ThingMappings } from "../mappings/mappings";
 
-export const Thing = ({ description, children, event, cardImage, imageAlt, cardTitle, className }) => {
+export const Thing = ({ description, children, event, cardImage, imageAlt, cardTitle, className, ...rest }) => {
   const [component, setComponent] = useState(null); 
 
   useEffect(() => {
@@ -35,5 +35,5 @@ export const Thing = ({ description, children, event, cardImage, imageAlt, cardT
     return null; 
   }
 
-  return ComponentMappings(component, children, event, cardImage, imageAlt, cardTitle, className);
+  return ComponentMappings(component, children, event, cardImage, imageAlt, cardTitle, className, rest);
 };

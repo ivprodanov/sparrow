@@ -142,5 +142,69 @@ input: {
     sizes: { big: "lg", "medium-sized": "md", small: "sm" },
     variants: { primary: "primary", secondary: "secondary", accent: "accent", neutral: "neutral" },
     modifiers: { ...sharedModifiers }
+  },
+badge: {
+  variants: {
+    primary: "primary",
+    secondary: "secondary",
+    accent: "accent",
+    neutral: "neutral"
+  },
+  modifiers: {
+    rounded: "rounded",
+    bordered: "border-sm border-neutral-700"
   }
+},
+accordion: {
+  variants: {
+    primary: "primary",
+    secondary: "secondary",
+    accent: "accent",
+    neutral: "neutral"
+  },
+  modifiers: {
+    rounded: "radius-lg",
+    bordered: "border-sm border-neutral-700"
+  }
+},
+tabs: {
+  variants: {
+    primary: "primary",
+    secondary: "secondary",
+    accent: "accent",
+    neutral: "neutral"
+  },
+  modifiers: {
+    // We can add modifiers like 'pill' or 'bordered' later
+    rounded: "radius-lg"
+  }
+},
+"bar-chart": {
+  variants: {
+    primary: "primary",
+    secondary: "secondary",
+    accent: "accent",
+    neutral: "neutral"
+  },
+  modifiers: {
+    rounded: "radius-lg",
+    bordered: "border-sm border-neutral-800"
+  }
+},
+breadcrumb: {
+  variants: {
+    primary: "text-primary-500",
+    neutral: "text-neutral-500"
+  }
+},
+modal: {
+  variants: {
+    primary: "primary",
+    neutral: "neutral-800"
+  },
+  modifiers: {
+    rounded: "radius-lg",
+    bordered: "border-sm border-neutral-700"
+  }
+}
 };
