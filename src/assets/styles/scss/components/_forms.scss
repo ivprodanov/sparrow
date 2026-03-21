@@ -1,0 +1,225 @@
+@use '../base/colors' as clr;
+
+// -----------------------------------------------------------------------------
+// BASE FORM ELEMENTS (Inputs, Textareas, Selects)
+// -----------------------------------------------------------------------------
+.input, .textarea, .select {
+  width: 100%; // Default to full width (controlled by parent grid/layout)
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: clr.$text-dark;
+  border: 1px solid map-get(clr.$colorsMap, 'neutral-300');
+  border-radius: 8px; // Aligning with your base border-radius
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Disable browser default styling for select
+  &.select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// SIZES
+// -----------------------------------------------------------------------------
+$form-sizes: (
+  'sm': (padding: 0.5rem 0.75rem, font-size: 0.875rem), // fs-200 equivalent
+  'md': (padding: 0.75rem 1rem, font-size: 1rem),       // fs-300 equivalent
+  'lg': (padding: 1rem 1.5rem, font-size: 1.125rem)     // fs-400 equivalent
+);
+
+@each $size, $styles in $form-sizes {
+  .input-#{$size}, .textarea-#{$size}, .select-#{$size}, .file-upload-#{$size} {
+    padding: map-get($styles, padding);
+    font-size: map-get($styles, font-size);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// VARIANTS (Dynamic Focus Rings via your Colors map)
+// -----------------------------------------------------------------------------
+@each $color in clr.$colorNameMap {
+  .input-#{$color}, .textarea-#{$color}, .select-#{$color} {
+    &:focus {
+      border-color: map-get(clr.$colorsMap, '#{$color}-500');
+      box-shadow: 0 0 0 3px rgba(map-get(clr.$colorsMap, '#{$color}-500'), 0.2);
+    }
+  }
+
+  // Toggles and File Uploads use background colors for their variants
+  .toggle-#{$color} .toggle-input:checked + .toggle-custom-mark {
+    background-color: map-get(clr.$colorsMap, '#{$color}-500');
+    border-color: map-get(clr.$colorsMap, '#{$color}-500');
+  }
+
+  .file-upload-#{$color} {
+    background-color: map-get(clr.$colorsMap, '#{$color}-100');
+    color: map-get(clr.$colorsMap, '#{$color}-700');
+    border: 1px dashed map-get(clr.$colorsMap, '#{$color}-500');
+    
+    &:hover {
+      background-color: map-get(clr.$colorsMap, '#{$color}-200');
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// INPUT WRAPPER (For Icons and Buttons)
+// -----------------------------------------------------------------------------
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    color: map-get(clr.$colorsMap, 'neutral-400');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; // Click through to the input
+  }
+
+  &.has-icon .input {
+    padding-left: 2.75rem; 
+  }
+
+  .input-button-addon {
+    margin-left: 0.5rem;
+    flex-shrink: 0; // Prevent button from shrinking in flex container
+  }
+}
+
+// -----------------------------------------------------------------------------
+// CUSTOM CHECKBOXES & RADIOS (Toggle Component)
+// -----------------------------------------------------------------------------
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+
+  .toggle-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .toggle-custom-mark {
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: #fff;
+    border: 1px solid map-get(clr.$colorsMap, 'neutral-300');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  // Make Radios Circular
+  &.toggle-radio .toggle-custom-mark {
+    border-radius: 50%;
+  }
+
+  // Make Checkboxes Slightly Rounded
+  &.toggle-checkbox .toggle-custom-mark {
+    border-radius: 4px;
+  }
+
+  // Add the checkmark / radio dot when checked
+  .toggle-input:checked + .toggle-custom-mark::after {
+    content: '';
+    display: block;
+  }
+
+  &.toggle-radio .toggle-input:checked + .toggle-custom-mark::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: white;
+  }
+
+  &.toggle-checkbox .toggle-input:checked + .toggle-custom-mark::after {
+    width: 0.35rem;
+    height: 0.7rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 0.15rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FILE UPLOAD
+// -----------------------------------------------------------------------------
+.file-upload-wrapper {
+  width: 100%;
+
+  .file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .file-upload-input {
+    // Relying on .visually-hidden from your _screen_reader.scss
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FORM WRAPPER (Layout Integrations)
+// -----------------------------------------------------------------------------
+.form-wrapper {
+  width: 100%;
+  
+  // By default, forms stack blocks nicely
+  display: flex;
+  flex-direction: column;
+
+  // Stacked Layout (Vertical flow with spacing)
+  &.form-stacked {
+    gap: 1.5rem; // Equivalent to your $space-400
+    
+    // Ensure grid/columns inside a stacked form behave nicely
+    .row {
+      margin-bottom: 0; 
+    }
+  }
+
+  // Inline Layout (Horizontal flow, great for search bars or toolbars)
+  &.form-inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end; // Aligns inputs and buttons at the bottom edge if there are labels
+    gap: 1rem;
+
+    // Prevent inputs from taking 100% width in inline mode
+    .input-wrapper, .select-wrapper, .file-upload-wrapper {
+      width: auto;
+      flex: 1 1 auto;
+    }
+    
+    // Explicit sizing for grid compatibility inside forms
+    > * {
+      min-width: max-content;
+    }
+  }
+}

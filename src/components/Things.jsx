@@ -1,44 +1,32 @@
 import { useEffect, useState } from "react";
 import { ComponentsMappings } from "./ThingMappings";
-import { ThingMappings } from "../mappings/mappings";
 
-
-export const Things = ({ description, events = [] , texts = [] }) => {
-    const [components, setComponents] = useState();
+export const Things = ({ description, events = [], texts = [] }) => {
+  const [components, setComponents] = useState(null);
 
   useEffect(() => {
-    let things = determineThings();
-
-    setComponents(things);
-  }, [description]);
+    if (!description) return;
+    setComponents(determineThings());
+  }, [description, events, texts]);
 
   const determineThings = () => {
-    let descriptionElements = description.split(" ");
-    let typeOfThing = descriptionElements[descriptionElements.length - 1];
-    let numberOfThings = descriptionElements[0];
-    let descriptions = descriptionElements.slice(0, -1)
+    const descriptionElements = description.split(" ");
+    
+    // e.g., "3 primary rounded buttons"
+    const numberOfThings = parseInt(descriptionElements[0], 10); 
+    const typeOfThing = descriptionElements[descriptionElements.length - 1]; 
+    
+    // Slice out the number (index 0) and the type (last index) to get just the modifiers
+    const descriptions = descriptionElements.slice(1, -1);
 
-    let textsObject = {}
-    let eventsObject = {}
-
-    for(let i = 0; i < texts.length; i++){
-        textsObject[`text${i + 1}`] = texts[i];
-    }
-
-    for(let i = 0; i < events.length; i++){
-        eventsObject[`event${i + 1}`] = events[i];
-    }
-
-    let describedThings = {
-        type: typeOfThing,
-        numberOfThings,
-        descriptions,
-        textsObject,
-        eventsObject
-    }
-
-    return describedThings;
+    return {
+      type: typeOfThing, // e.g., "buttons"
+      numberOfThings: isNaN(numberOfThings) ? 1 : numberOfThings,
+      descriptions,      // e.g., ["primary", "rounded"]
+      texts,             // Just pass the arrays directly
+      events
+    };
   };
 
-  return ComponentsMappings(components);
+  return components ? ComponentsMappings(components) : null;
 };

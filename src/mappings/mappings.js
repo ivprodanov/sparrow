@@ -1,50 +1,76 @@
+const sharedModifiers = {
+  rounded: ["radius-lg"],
+  bordered: ["border-sm"],
+  "thick-bordered": ["border-md"],
+  "full-width": ["w-100"], // Assuming you add a width utility
+};
+
+// Form specific sizes (inputs often need different padding than cards)
+const formSizes = {
+  big: "lg",
+  "medium-sized": "md",
+  small: "sm"
+};
+
+const formVariants = {
+  primary: "primary",
+  secondary: "secondary",
+  accent: "accent",
+  neutral: "neutral"
+};
+
 export const ThingMappings = {
-    button: {
-      // size
-      big: ["p-x-700", "p-y-400", "fs-700", "fw-500"],
-      "medium-sized": ["p-x-500", "p-y-200", "fs-500"],
-      small: ["p-x-500", "p-y-200", "fs-200"],
-      // color
-      primary: ["button-primary"],
-      secondary: ["button-secondary"],
-      accent: ["accent-500"],
-      neutral: ["neutral-500"],
-      // borders
-      rounded: ["radius-lg"],
-      bordered: ["border-sm"],
-      "thick-bordered": ["border-md"],
-    },
+  button: {
+    sizes: { big: "lg", "medium-sized": "md", small: "sm" },
+    variants: { primary: "primary", secondary: "secondary", accent: "accent", neutral: "neutral" },
+    modifiers: { ...sharedModifiers }
+  },
   
-    // Card
-    card: {
-      // size
-      big: ["lg"],
-      "medium-sized": ["md"],
-      small: ["sm"],
-      // variant
-      primary: ["card-primary"],
-      secondary: ["card-secondary"],
-      accent: ["card-accent"],
-      neutral: ["card-neutral"],
-      // borders
-      rounded: ["radius-lg"],
-      bordered: ["border-sm"],
-      "thick-bordered": ["border-md"],
-    },
-  
-    "image-card": {
-      // size
-      big: ["lg"],
-      "medium-sized": ["md"],
-      small: ["sm"],
-      // color
-      primary: ["card-primary"],
-      secondary: ["card-secondary"],
-      accent: ["card-accent"],
-      neutral: ["card-neutral"],
-      // borders
-      rounded: ["radius-lg"],
-      bordered: ["border-sm"],
-      "thick-bordered": ["border-md"],
-    },
-  };
+  card: {
+    sizes: { big: "lg", "medium-sized": "md", small: "sm" },
+    variants: { primary: "primary", secondary: "secondary", accent: "accent", neutral: "neutral" },
+    modifiers: { ...sharedModifiers }
+  },
+
+  "image-card": {
+    sizes: { big: "lg", "medium-sized": "md", small: "sm" },
+    variants: { primary: "primary", secondary: "secondary", accent: "accent", neutral: "neutral" },
+    modifiers: { ...sharedModifiers }
+  },
+input: {
+    sizes: formSizes,
+    variants: formVariants,
+    modifiers: { ...sharedModifiers, "with-icon": ["has-icon"], "with-button": ["has-button"] }
+  },
+  textarea: {
+    sizes: formSizes,
+    variants: formVariants,
+    modifiers: { ...sharedModifiers }
+  },
+  select: {
+    sizes: formSizes,
+    variants: formVariants,
+    modifiers: { ...sharedModifiers }
+  },
+  checkbox: {
+    sizes: formSizes,
+    variants: formVariants,
+    modifiers: { ...sharedModifiers }
+  },
+  radio: {
+    sizes: formSizes,
+    variants: formVariants,
+    modifiers: { ...sharedModifiers }
+  },
+  "file-upload": {
+    sizes: formSizes,
+    variants: formVariants,
+    modifiers: { ...sharedModifiers }
+  },
+  form: {
+    // Forms might just need layout modifiers rather than variants/sizes
+    sizes: {},
+    variants: {},
+    modifiers: { "inline": ["form-inline"], "stacked": ["form-stacked"] }
+  }
+};

@@ -2,15 +2,18 @@ import React from 'react';
 
 const Button = ({
   children,
-  variant = 'primary', // default variant
-  size = 'md',         // default size
+  variant = 'primary',
+  size = 'md',
   disabled = false,
   onClick,
-  stylings
+  className // Changed from 'stylings'
 }) => {
-  const classNames = `button button-${variant} button-${size}`;
+  // Always apply base classes, then attach any custom modifiers at the end
+  const baseClassNames = `button button-${variant} button-${size}`;
+  const combinedClasses = `${baseClassNames} ${className || ""}`.trim();
+
   return (
-    <button className={stylings ? stylings : classNames} onClick={onClick} disabled={disabled}>
+    <button className={combinedClasses} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
