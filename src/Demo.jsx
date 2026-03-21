@@ -4,6 +4,7 @@ import { Thing } from "./components/Thing";
 import Bird1 from '../src/assets/images/bird1.jpg';
 import Bird2 from '../src/assets/images/bird2.jpg';
 import Bird3 from '../src/assets/images/bird3.jpg';
+import { Playground } from "./Playground";
 
 export const Demo = () => {
   const carouselImages = [
@@ -62,6 +63,7 @@ export const Demo = () => {
             </Thing>
           </Thing>
         </Thing>
+        <Playground/>
 
         {/* ==========================================
             2. STATS SECTION 

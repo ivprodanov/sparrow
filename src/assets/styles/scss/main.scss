@@ -19,3 +19,19 @@
 .carousel-container {
    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  
+  th {
+    font-size: $fs-200;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  td {
+    font-size: $fs-300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
