@@ -1,6 +1,10 @@
 .container {
-    padding-inline: 2em;
-    margin-inline: auto;
-    max-width: 80rem;
-}
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 2rem; // Desktop padding
 
+    @media (max-width: 768px) {
+        padding-inline: 1rem; // Much smaller padding for mobile
+    }
+}

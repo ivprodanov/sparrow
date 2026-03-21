@@ -1,0 +1,96 @@
+@use '../base/colors' as clr; // Make sure to import your colors!
+
+$carousel-transition: 0.4s ease-in-out;
+$carousel-btn-bg: rgba(0, 0, 0, 0.3);
+$carousel-btn-hover: rgba(0, 0, 0, 0.6);
+
+// A simple fade animation for when React mounts the new slide
+@keyframes carouselFadeIn {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Nested Content
+  .carousel-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    
+    // Apply the fade whenever the content inside changes
+    > * {
+      animation: carouselFadeIn $carousel-transition;
+    }
+
+    .carousel-image {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px; // Ties into your standard border-radius
+    }
+  }
+
+  // Navigation
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $carousel-btn-bg;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+    border-radius: 4px;
+
+    &:hover {
+      background: $carousel-btn-hover;
+    }
+
+    &.prev { left: 1rem; }
+    &.next { right: 1rem; }
+  }
+
+  // Pagination
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: map-get(clr.$colorsMap, 'neutral-300'); // Use SCSS Map
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+
+      &.active {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  // Size Modifiers 
+  &.carousel-sm { max-width: 400px; }
+  &.carousel-md { max-width: 800px; }
+  &.carousel-lg { max-width: 1200px; }
+
+  // Variant Modifiers (Hooked into Sparrow's Color Map)
+  &.carousel-primary .dot.active { background: map-get(clr.$colorsMap, 'primary-500'); }
+  &.carousel-secondary .dot.active { background: map-get(clr.$colorsMap, 'secondary-500'); }
+  &.carousel-accent .dot.active { background: map-get(clr.$colorsMap, 'accent-500'); }
+  &.carousel-neutral .dot.active { background: map-get(clr.$colorsMap, 'neutral-700'); }
+}

@@ -1,75 +1,77 @@
 @use 'sass:math';
 
-$whiteClr: #F1FFFA;
-$darkClr: #454545;
-$lightBlue: #61949e;
-$roseClr: #785964;
-$extraLightBlue: #bbcccf;
+// Base Colors (Updated for Premium SaaS Look)
+$whiteClr: #ffffff;
+$darkClr: #0f172a; // Deep slate for overall backgrounds
+$lightBlue: #38bdf8;
+$roseClr: #f43f5e;
+$extraLightBlue: #e0f2fe;
 
-// TODO - change later ------------------------------------- example colors for now.
-
-// Primary Color (Blue)
+// The Premium SaaS Color Palette
 $colorsMap: (
-    // Primary Color (#9AD2CB)
-    primary-100: #e4f5f3,
-    primary-200: #c4e7e3,
-    primary-300: #a3d8d3,
-    primary-400: #83cac3,
-    primary-500: #9AD2CB, // Base primary color
-    primary-600: #68a7a1,
-    primary-700: #4f7f7a,
-    primary-800: #355653,
-    primary-900: #1a2c2b,
+    // Primary Color (Electric Indigo - #4F46E5)
+    // Strong, trustworthy, and modern
+    primary-100: #e0e7ff,
+    primary-200: #c7d2fe,
+    primary-300: #a5b4fc,
+    primary-400: #818cf8,
+    primary-500: #4f46e5, // Base primary color
+    primary-600: #4338ca,
+    primary-700: #3730a3,
+    primary-800: #312e81,
+    primary-900: #1e1b4b,
 
-    // Secondary Color (#D7EBBA)
-    secondary-100: #f7fbf1,
-    secondary-200: #ecf6d9,
-    secondary-300: #e1f1c1,
-    secondary-400: #d6ecaa,
-    secondary-500: #D7EBBA, // Base secondary color
-    secondary-600: #aec490,
-    secondary-700: #879c6f,
-    secondary-800: #5f7450,
-    secondary-900: #384b30,
+    // Secondary Color (Vibrant Emerald - #10B981)
+    // Crisp, fresh, and great for features/success states
+    secondary-100: #d1fae5,
+    secondary-200: #a7f3d0,
+    secondary-300: #6ee7b7,
+    secondary-400: #34d399,
+    secondary-500: #10b981, // Base secondary color
+    secondary-600: #059669,
+    secondary-700: #047857,
+    secondary-800: #065f46,
+    secondary-900: #064e3b,
 
-    // Accent Color (#EA526F)
-    accent-100: #fde7eb,
-    accent-200: #fbbdc9,
-    accent-300: #f993a7,
-    accent-400: #f76885,
-    accent-500: #EA526F, // Base accent color
-    accent-600: #b84257,
-    accent-700: #892f41,
-    accent-800: #5b1f2b,
-    accent-900: #2d0f16,
+    // Accent Color (Sunset Coral - #F97316)
+    // High contrast for checkboxes, toggles, and CTA buttons
+    accent-100: #ffedd5,
+    accent-200: #fed7aa,
+    accent-300: #fdba74,
+    accent-400: #fb923c,
+    accent-500: #f97316, // Base accent color
+    accent-600: #ea580c,
+    accent-700: #c2410c,
+    accent-800: #9a3412,
+    accent-900: #7c2d12,
 
-    // Neutral Color (#472836)
-    neutral-100: #e6dbde,
-    neutral-200: #cdb8be,
-    neutral-300: #b3969f,
-    neutral-400: #9a737f,
-    neutral-500: #472836, // Base neutral color
-    neutral-600: #391f2b,
-    neutral-700: #2b1721,
-    neutral-800: #1d0f16,
-    neutral-900: #0e080b
+    // Neutral Color (Slate Gray - #64748B)
+    // Cool grays make shadows and dark mode cards look incredibly sleek
+    neutral-100: #f1f5f9,
+    neutral-200: #e2e8f0,
+    neutral-300: #cbd5e1,
+    neutral-400: #94a3b8,
+    neutral-500: #64748b, // Base neutral color
+    neutral-600: #475569,
+    neutral-700: #334155,
+    neutral-800: #1e293b,
+    neutral-900: #0f172a  // Deep slate for dark mode cards
 );
 
 // Background Colors
-$background-light: #fafafa;
-$background-dark: #121212;
-$background-neutral: #f5f5f5;
-$background-muted: #e0e0e0;
+$background-light: #f8fafc; // Slightly cooler white
+$background-dark: #0f172a;  // Match neutral-900
+$background-neutral: #f1f5f9;
+$background-muted: #e2e8f0;
 
 // Text Colors
-$text-light: #ffffff;
-$text-dark: #212121;
-$text-muted: #757575;
+$text-light: #f8fafc;
+$text-dark: #0f172a; // Match neutral-900 for sharp contrast
+$text-muted: #64748b; // Match neutral-500 for beautiful subtle text
 
 $colorNameMap: ('primary', 'secondary', 'accent', 'neutral');
-// $colorValuesMap: (100, 200, 300, 400, 500, 600, 700, 800, 900);
 
-// Function to determine inverted text color
+// Function to determine inverted text color (Kept exactly as you wrote it!)
 @function inverted-text-color($bg-color) {
     // Calculate the luminance of the background color
     $red: math.div(red($bg-color), 255);
@@ -83,24 +85,56 @@ $colorNameMap: ('primary', 'secondary', 'accent', 'neutral');
     } @else {
       @return $text-light; // Dark background -> Light text
     }
-  }
+}
 
-
+// Generate the utility classes
 @for $i from 1 through 9 {
     $value: $i * 100;
 
     @each $color in $colorNameMap {
-        $key: #{$color}-#{$value}; // Dynamically build the key
+        $key: #{$color}-#{$value}; 
         @if map-has-key($colorsMap, $key) {
             $bg-color: map-get($colorsMap, $key);
             $text-color: inverted-text-color($bg-color);
 
+            // Existing combined background + text utility
             .#{$color}-#{$value} {
-                background-color: $bg-color; // Access the map value
+                background-color: $bg-color; 
                 color: $text-color;
             }
+
+            // NEW: Text-only utility
+            .text-#{$color}-#{$value} {
+                color: $bg-color;
+            }
+
         } @else {
             @warn "Key `#{$key}` does not exist in $colorsMap.";
         }
+    }
+}
+
+// Global Theme Containers
+.bg-dark {
+    background-color: $background-dark;
+    color: $text-light;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bg-light {
+    background-color: $background-light;
+    color: $text-dark;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Target neutral cards specifically for theme flipping
+.theme-light {
+    .neutral-800 {
+        background-color: $whiteClr !important;
+        color: $text-dark !important;
+        border: 1px solid $background-muted !important;
+    }
+    .text-light, .text-neutral-100, .text-neutral-300 {
+        color: $text-dark !important;
     }
 }

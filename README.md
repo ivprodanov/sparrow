@@ -2,90 +2,189 @@
 
 
 # 🕊️ SPARROW
+# 🪶 Sparrow UI
 
-## A “describe-it-yourself” design system built on Flexbox
+[![npm version](https://img.shields.io/npm/v/sparrow-ui.svg?style=flat-square)](https://www.npmjs.com/package/sparrow-ui)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
+[![React](https://img.shields.io/badge/react-%5E18.0.0-61DAFB.svg?style=flat-square&logo=react)](https://reactjs.org/)
 
-**SPARROW** is an experimental, declarative design system for React. Rather than composing rigid UI components, you describe what you want—and SPARROW figures out the styles based on your words.
+**Sparrow UI** is a "linguistic routing" React design system. Instead of wrestling with deeply nested HTML tags, complex grid classes, and prop drilling, Sparrow allows you to describe what you want in natural language. 
 
----
+The engine parses your description and automatically generates the correct components, layouts, and SCSS utility classes.
 
-## 🚀 Why SPARROW?
+## 📦 Installation
 
-Traditional component libraries can be opinionated or heavy-handed. With SPARROW, you define components through human-readable descriptions, and the framework translates them into styled elements using utility classes.
+```bash
+npm install sparrow-ui
+# or
+yarn add sparrow-ui
+````
 
-Example:
+Import the base styles into your root `App.jsx` or `index.js`:
 
 ```jsx
-<Thing description="a big rounded button">
-  This is a big rounded button
+import 'sparrow-ui/dist/sparrow.css';
+```
+
+-----
+
+## 🚀 The Core Concept: `<Thing />`
+
+Everything in Sparrow revolves around the `<Thing />` component. You pass a natural language string to the `description` prop, ensuring the **component name is always the last word**.
+
+```jsx
+import { Thing } from 'sparrow-ui';
+
+// Generates an <h1 class="text-align-center fw-700">
+<Thing description="centered bold h1 heading">Hello World</Thing>
+
+// Generates a flexbox grid column taking up 50% width
+<Thing description="half column">Content goes here</Thing>
+```
+
+-----
+
+## 📖 Documentation
+
+### 1\. The Global Dictionary
+
+Sparrow uses a standardized dictionary. These keywords can be applied to almost any component in the system to automatically handle styling.
+
+  * **Variants:** `primary`, `secondary`, `accent`, `neutral`, `muted` *(Typography only)*
+  * **Modifiers:** `rounded`, `bordered`, `thick-bordered`, `full-width`
+
+-----
+
+### 2\. Layout & Grid System
+
+Sparrow leverages a responsive 12-column flexbox grid system.
+
+  * **container:** The main wrapper for centering content.
+      * *Modifiers:* `fluid` (forces 100% width, no max-width)
+  * **row:** Flexbox row to hold columns.
+      * *Modifiers:* `tight` (small gaps), `loose` (large gaps), `centered` (justifies and aligns items)
+  * **column:** Fractions map directly to the 12-column grid.
+      * *Sizes:* `full` (12), `half` (6), `third` (4), `quarter` (3), `two-thirds` (8), `three-quarters` (9)
+
+<!-- end list -->
+
+```jsx
+<Thing description="container">
+  <Thing description="loose row">
+    <Thing description="two-thirds column">Main Content</Thing>
+    <Thing description="third column">Sidebar</Thing>
+  </Thing>
 </Thing>
 ```
 
-Inspired by natural language and powered by utility-first styling (like Flexbox), SPARROW is meant to be playful, lightweight, and expressive.
+-----
 
----
+### 3\. Typography
 
-## 📢 June 2025 — Now Open Source!
+Text alignments and font weights map intuitively to the SCSS typography scales.
 
-After much encouragement (thanks, friend 🙌), I've decided to open-source SPARROW. I’d love for you to contribute, offer feedback, or just experiment with the framework.
+  * **heading:** `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `huge`, `small`
+  * **paragraph:** `big`, `medium-sized`, `small`
+  * **Modifiers:** `centered`, `right`, `bold`, `light`, `italic`, `uppercase`, `underline`, `lead`
 
-Whether you want to tinker, optimize, or build—your involvement is welcome.
+<!-- end list -->
 
-📬 Feel free to reach out: [contact@prodanov.ch](mailto:contact@prodanov.ch)
-
----
-
-## 🛠️ Todo & Development Roadmap
-
-### 🔧 Core Improvements
-
-* [ ] Simplify and combine card props (avoid bloat in `<Thing />`)
-* [ ] Improve support for breakpoints (smaller screens)
-* [ ] Finalize grid system review
-* [ ] Add better className support to `<Thing />` component
-* [ ] Improve rendering performance (address slow styling on hard refresh)
-
-### ✅ Recently Completed
-
-* [x] Size handling for cards
-* [x] Height & width utility classes
-* [x] Text decoration and positioning utilities
-* [x] Fixed duplicate column classes (e.g., `col-6`)
-* [x] Added `margin-inline-auto` utility (`m-x-auto`)
-* [x] Direct `className` support in `<Thing />`
-* [x] Nested `<Thing />` (e.g., buttons inside cards)
-
----
-
-## How to implement new components:
-- mappings.js is responsible for the description keywords, for example the button component:
-```js
-
-button: {
-      // size
-      big: ["p-x-700", "p-y-400", "fs-700", "fw-500"],
-      "medium-sized": ["p-x-500", "p-y-200", "fs-500"],
-      small: ["p-x-500", "p-y-200", "fs-200"],
-      // color
-      primary: ["button-primary"],
-      secondary: ["button-secondary"],
-      accent: ["accent-500"],
-      neutral: ["neutral-500"],
-      // borders
-      rounded: ["radius-lg"],
-      bordered: ["border-sm"],
-      "thick-bordered": ["border-md"],
-    },
-
+```jsx
+<Thing description="centered bold h2 heading">Features</Thing>
+<Thing description="muted lead paragraph">Discover what Sparrow can do.</Thing>
 ```
-In order to implement new components, You could extend this file with new mappings or propose a different solution - I'm open to new ideas.
 
-The componentMappingHelpers.js file is another file, responsible for the creation of components. It is relatively well commented (GPT / me) and could also be extended. Feel free to create new utility files, delete or patch existing functionality etc.
+-----
 
-The SCSS file main.scss is where all the other relevant SCSS files are imported - this could and should also be freely edited, extended and modified. 
+### 4\. Basic Components
 
-### To test:
-use the Demo.jsx file or create a new one. I was faced with difficulties compiling and building the project so that I could run it as a library - this is another task in and of itself... App.jsx could also be used directly for testing purposes - remember - this project should be compiled as a library in the end (: 
+Cards automatically adjust their width to fit their parent container and their minimum height to fit their content.
+
+  * **button:** `big`, `medium-sized`, `small`
+  * **card:** `big`, `medium-sized`, `small` (Pass header via `cardTitle`)
+  * **image-card:** `big`, `medium-sized`, `small` (Pass image source via `cardImage`)
+
+<!-- end list -->
+
+```jsx
+<Thing description="medium-sized accent rounded image-card" cardImage={MyImage} cardTitle="Card Title">
+  <Thing description="paragraph">Card content goes here.</Thing>
+  <Thing description="small primary rounded button" event={() => alert('Clicked!')}>Read More</Thing>
+</Thing>
+```
+
+-----
+
+### 5\. Forms
+
+Forms are robust and include layout handling for stacking or inline arrangements. All inputs accept standard `onChange` events via the `event` prop.
+
+  * **form:** `stacked`, `inline`
+  * **input:** `with-icon`, `with-button`
+  * **textarea:** *Standard modifiers apply*
+  * **select:** Pass options array as `children`.
+  * **checkbox / radio:** Pass label via `cardTitle`.
+  * **file-upload:** Pass button text via `cardTitle`.
+
+<!-- end list -->
+
+```jsx
+<Thing description="stacked form">
+  <Thing description="inline form">
+    <Thing description="with-icon medium-sized primary input" cardTitle="Search..." />
+  </Thing>
+  <Thing description="medium-sized primary select">
+    {["Option 1", "Option 2"]}
+  </Thing>
+  <Thing description="small accent checkbox" cardTitle="I agree" />
+</Thing>
+```
+
+-----
+
+### 6\. Media & Carousels
+
+Sparrow takes arrays of data and automatically builds animated, swipeable carousels.
+
+  * **image-carousel:** Pass an array of `{src, alt}` objects as children.
+  * **card-carousel:** Pass an array of `{title, children}` objects as children.
+
+<!-- end list -->
+
+```jsx
+<Thing description="big primary rounded image-carousel">
+  {[
+    { src: 'img1.jpg', alt: 'First' },
+    { src: 'img2.jpg', alt: 'Second' }
+  ]}
+</Thing>
+```
+
+-----
+
+### 7\. Advanced: Pluralization Engine
+
+Sparrow can generate multiple identical elements without requiring you to write `.map()` loops. By putting a number at the start of your description and pluralizing the component name, Sparrow handles the loop.
+
+Pass arrays to `texts` and `events` to uniquely populate each generated item.
+
+```jsx
+<Thing 
+  description="3 small primary rounded buttons" 
+  texts={['Save', 'Edit', 'Delete']} 
+  events={[handleSave, handleEdit, handleDelete]} 
+/>
+```
+
+-----
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome\! Feel free to check the [issues page](https://www.google.com/search?q=https://github.com/ivprodanov/sparrow/issues).
+
+## 📝 License
+
+This project is [MIT](https://www.google.com/search?q=LICENSE) licensed.
 
 ---
 
@@ -93,20 +192,20 @@ use the Demo.jsx file or create a new one. I was faced with difficulties compili
 
 ### Text Elements
 
-* [ ] Headings
-* [ ] Paragraphs
+* [x] Headings
+* [x] Paragraphs
 
 ### Forms & Inputs
 
-* [ ] Basic Input
-* [ ] Input with Button
-* [ ] Input with Icon
-* [ ] Checkbox
-* [ ] Radio Button
-* [ ] Select Dropdown
-* [ ] File Upload
-* [ ] Textarea
-* [ ] Form Wrapper
+* [x] Basic Input
+* [x] Input with Button
+* [x] Input with Icon
+* [x] Checkbox
+* [x] Radio Button
+* [x] Select Dropdown
+* [x] File Upload
+* [x] Textarea
+* [x] Form Wrapper
 
 ### Dropdown
 
@@ -119,14 +218,14 @@ use the Demo.jsx file or create a new one. I was faced with difficulties compili
 
 ### Carousels
 
-* [ ] Image Carousel
-* [ ] Card Carousel
+* [x] Image Carousel
+* [x] Card Carousel
 
 ### Layout & Containers
 
-* [ ] Container
-* [ ] Row
-* [ ] Column
+* [x] Container
+* [x] Row
+* [x] Column
 
 ### Modals
 

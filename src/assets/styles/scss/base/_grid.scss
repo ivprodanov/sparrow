@@ -67,11 +67,13 @@ $breakpoints: (
   margin-right: auto;
 }
 
+
+
 // Row (Flex container)
 .row {
   display: flex;
   flex-wrap: wrap;
-
+ width: 100%;
   // Generate gutter classes dynamically
   @each $key, $value in $gutters {
     &.gx-#{$key} {
@@ -108,30 +110,18 @@ $breakpoints: (
   }
 }
 
-// Column Class
+// Column Class Loop
 @for $i from 1 through $grid-columns {
 
   .col {
     @include col('default', 0); // Default column
   }
 
-  // Responsive Column Classes
-  // @each $breakpoint, $value in $breakpoints {
-    .col-#{$i} {
-        @include col($i, 0);
-    }
-  // }
-
-  @each $breakpoint, $value in $breakpoints {
-    @include mediaQuery($value) {
-      .col-#{$i}-#{$breakpoint} {
-        @include col($i, 0, $breakpoint);
-      }
-    }
+  .col-#{$i} {
+      @include col($i, 0);
   }
 
-
-  // Generate gx-* specific column widths
+  // Generate gx-* specific column widths FIRST
   @each $key, $value in $gutters {
     .gx-#{$key} {
       justify-content: space-between;
@@ -146,9 +136,36 @@ $breakpoints: (
       margin: $value 0;
     }
   }
+
+  // Responsive Column Classes placed AFTER gx-* to override them naturally
+  // We also target [class*="gx-"] to forcefully beat the specificity of the gutter loop!
+  @each $breakpoint, $value in $breakpoints {
+    @include mediaQuery($value) {
+      .col-#{$i}-#{$breakpoint},
+      [class*="gx-"] .col-#{$i}-#{$breakpoint} {
+        @include col($i, 0);
+      }
+    }
+  }
 }
 
 @mixin fontSize($size) {
   font-size: $size; // Fallback in px
   font-size: calculateRem($size);
+}
+
+@media (max-width: 768px) {
+    .col-12-md, .col-12-sm {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    // Force "loose" rows to stop pushing horizontal margins on mobile
+    .loose.row {
+        gap: 1rem; // Use a standard small gap instead of large desktop gutters
+        margin: 0;
+    }
 }
