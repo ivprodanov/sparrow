@@ -1,10 +1,11 @@
+```
 ███████╗██████╗  █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗██╗   ██╗██╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║██║   ██║██║
 ███████╗██████╔╝███████║██████╔╝██████╔╝██║   ██║██║ █╗ ██║██║   ██║██║
 ╚════██║██╔═══╝ ██╔══██║██╔══██╗██╔══██╗██║   ██║██║███╗██║██║   ██║██║
 ███████║██║     ██║  ██║██║  ██║██║  ██║╚██████╔╝╚███╔███╔╝╚██████╔╝██║
 ╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝  ╚═════╝ ╚═╝
-
+```
 [![npm version](https://img.shields.io/npm/v/sparrow-ui.svg?style=flat-square)](https://www.npmjs.com/package/sparrow-ui)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![React](https://img.shields.io/badge/react-%5E18.0.0-61DAFB.svg?style=flat-square&logo=react)](https://reactjs.org/)
